@@ -1,0 +1,6 @@
+s/替换前/替换后/g
+sudo sed -i "s/深圳前海问云/深圳市前海问云/g" *
+
+
+//特殊字符 不能替换
+sudo sed -i "s/粤ICP备17058488号/<a href="http://www.miitbeian.gov.cn">粤ICP备17058488号</a>/g" *

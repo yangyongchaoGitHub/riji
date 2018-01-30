@@ -1,0 +1,1 @@
+mysqldump -u heating -B heating  --skip-lock-tables  -p > all.sql

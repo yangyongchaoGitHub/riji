@@ -1,0 +1,13 @@
+在app项目源码主module的AndroidManifest.xml中
+<manifest >节点添加
+android:sharedUserId="android.uid.system"
+
+使用android源码下的 build/target/product/security/ 下的platform.x509.pem 和 platform.pk8
+(注意这里如MTK源码中需要使用对应build/target/product/security/项目/下的这两个工具)，
+以及源码下的out/host/linux-x86/framework/(这个为编译源码后的目录)下的signapk.jar，共三个工具进行签名。
+
+签名方法：将上述三个apk拷贝到同一个目录下，使用
+" java -jar signapk.jar platform.x509.pem platform.pk8  待签名名字.apk  签名后名字.apk "
+命令进行签名。
+
+然后安装即可。

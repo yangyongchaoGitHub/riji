@@ -1,0 +1,15 @@
+shell@android:/data $ run-as com.your.package  
+run-as com.your.package  
+shell@android:/data/data/com.your.package $ cd /data/data/com.your.package  
+cd /data/data/com.your.package  
+shell@android:/data/data/com.your.package $ ls  
+ls  
+cache  
+databases  
+lib  
+shared_prefs  
+shell@android:/data/data/com.your.package $ cd databases  
+cd databases  
+shell@android:/data/data/com.your.package/databases $ ls  
+yourpackagename.db  
+$ cat preferences.db > /mnt/sdcard/yourpackagename.db     

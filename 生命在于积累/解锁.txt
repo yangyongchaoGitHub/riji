@@ -1,0 +1,7 @@
+我想询问当第3个画面启动完毕之后。会出现一个让用户解锁的界面，那这部分的内容在哪里启动，可否简单说一下，谢谢。
+Re: hudengjun8748 2012-10-20 10:31发表 [回复]
+
+回复天才2012：不知道你用的是哪个平台，在frameworks/base/policy/src/com/android/internal/policy/impl/KeyguardViewMediator.java里将mExternallyEnabled=true改为false就可以关掉锁屏。
+Re: 天才2012 2012-10-20 22:59发表 [回复]
+
+回复hudengjun8748：谢谢，这种很好，还可以在程序里面用广播完成

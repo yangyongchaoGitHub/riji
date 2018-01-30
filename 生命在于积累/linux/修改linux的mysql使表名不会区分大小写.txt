@@ -1,0 +1,16 @@
+*****修改后会使已经导入的数据库表失效
+{
+mysql> select * from house;
+ERROR 1146 (42S02): Table 'heating.house' doesn't exist
+mysql> select * from House;
+ERROR 1146 (42S02): Table 'heating.house' doesn't exist
+}
+*****
+
+步骤：
+其中 lower_case_table_names=1 参数缺省地在 Windows 中这个选项为 1 ，在 Unix 中为 0，因此在window中不会遇到的问题
+
+:/etc/mysql$ vim my.cnf
+在[mysqld]节点下，加入一行： lower_case_table_names=1
+重启MySQL即可
+

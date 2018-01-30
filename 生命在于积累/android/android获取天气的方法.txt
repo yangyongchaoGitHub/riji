@@ -1,0 +1,8 @@
+1:通过url获取网页源码，解析获取
+http://m.weather.com.cn/m/pn12/weather.htm  +  id
+
+2：付费和免费的提供者
+https://www.heweather.com/products
+
+3：解析网页源码
+http://i.tianqi.com/index.php?c=code

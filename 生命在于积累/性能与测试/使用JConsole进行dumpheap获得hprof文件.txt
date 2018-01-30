@@ -1,0 +1,5 @@
+在MBean中进入
+com.sum.manage..
+HotSpotDiagn..
+操作..
+dumpHeap

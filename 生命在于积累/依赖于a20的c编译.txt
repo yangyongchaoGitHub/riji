@@ -1,0 +1,913 @@
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ ls
+boot              build_dragonboard.sh  buildroot  clean.sh           linux-3.4  README          tools
+build_android.sh  build_pack.sh         build.sh   external-packages  out        sys_config.fex  u-boot
+wenyun@wenyun:~/a20/lichee$ find -name libc
+./boot/config/gcc-linaro/arm-linux-gnueabi/libc
+./boot/boot1/include/libc
+./out/android/common/buildroot/external-toolchain/arm-linux-gnueabi/libc
+./out/linux/common/buildroot/external-toolchain/arm-linux-gnueabi/libc
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L./out/linux/common/buildroot/external-toolchain/arm-linux-gnueabi/libc
+/home/wenyun/a20/CQA20Android_v1.3/lichee/boot/config/gcc-linaro/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/../../../../arm-linux-gnueabi/bin/ld: cannot find crt1.o: No such file or directory
+/home/wenyun/a20/CQA20Android_v1.3/lichee/boot/config/gcc-linaro/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/../../../../arm-linux-gnueabi/bin/ld: cannot find crti.o: No such file or directory
+/home/wenyun/a20/CQA20Android_v1.3/lichee/boot/config/gcc-linaro/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/../../../../arm-linux-gnueabi/bin/ld: cannot find crtbegin.o: No such file or directory
+collect2: ld returned 1 exit status
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ find -name libc
+./boot/config/gcc-linaro/arm-linux-gnueabi/libc
+./boot/boot1/include/libc
+./out/android/common/buildroot/external-toolchain/arm-linux-gnueabi/libc
+./out/linux/common/buildroot/external-toolchain/arm-linux-gnueabi/libc
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ ls boot/config/gcc-linaro/arm-linux-gnueabi/libc/
+lib  usr
+wenyun@wenyun:~/a20/lichee$ ls boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/
+arm-linux-gnueabi  libgcc_s.so    libgfortran.so        libgfortran.spec  libstdc++.so.6              libsupc++.a
+ld-linux.so.3      libgcc_s.so.1  libgfortran.so.3      libstdc++.a       libstdc++.so.6.0.16
+ldscripts          libgfortran.a  libgfortran.so.3.0.0  libstdc++.so      libstdc++.so.6.0.16-gdb.py
+wenyun@wenyun:~/a20/lichee$ ls boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/arm-linux-gnueabi/
+ld-2.13.so               libcrypt-2.13.so  libnsl.so.1            libnss_nis-2.13.so      librt-2.13.so
+ld-linux.so.3            libcrypt.so.1     libnss_compat-2.13.so  libnss_nisplus-2.13.so  librt.so.1
+libanl-2.13.so           libc.so.6         libnss_compat.so.2     libnss_nisplus.so.2     libSegFault.so
+libanl.so.1              libdl-2.13.so     libnss_dns-2.13.so     libnss_nis.so.2         libthread_db-1.0.so
+libBrokenLocale-2.13.so  libdl.so.2        libnss_dns.so.2        libpcprofile.so         libthread_db.so.1
+libBrokenLocale.so.1     libm-2.13.so      libnss_files-2.13.so   libpthread-2.13.so      libutil-2.13.so
+libc-2.13.so             libmemusage.so    libnss_files.so.2      libpthread.so.0         libutil.so.1
+libcidn-2.13.so          libm.so.6         libnss_hesiod-2.13.so  libresolv-2.13.so
+libcidn.so.1             libnsl-2.13.so    libnss_hesiod.so.2     libresolv.so.2
+wenyun@wenyun:~/a20/lichee$ ls boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/
+arm-linux-gnueabi  libgcc_s.so    libgfortran.so        libgfortran.spec  libstdc++.so.6              libsupc++.a
+ld-linux.so.3      libgcc_s.so.1  libgfortran.so.3      libstdc++.a       libstdc++.so.6.0.16
+ldscripts          libgfortran.a  libgfortran.so.3.0.0  libstdc++.so      libstdc++.so.6.0.16-gdb.py
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/
+boot0/     boot1/     config/    .git/      Makefile   pack/      workspace/ 
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/
+ARMCC_CROSSTOOL.CFG  CROSSTOOL.CFG        gcc-linaro/          storage_media_cfg/   
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/gcc-linaro/
+arm-linux-gnueabi/ bin/               lib/               libexec/           
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/gcc-linaro/arm-linux-gnueabi/
+bin/     include/ libc/    
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/gcc-linaro/arm-linux-gnueabi/libc/
+lib/ usr/ 
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/
+arm-linux-gnueabi/          libgcc_s.so.1               libgfortran.so.3.0.0        libstdc++.so.6
+ld-linux.so.3               libgfortran.a               libgfortran.spec            libstdc++.so.6.0.16
+ldscripts/                  libgfortran.so              libstdc++.a                 libstdc++.so.6.0.16-gdb.py
+libgcc_s.so                 libgfortran.so.3            libstdc++.so                libsupc++.a
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/
+/home/wenyun/a20/CQA20Android_v1.3/lichee/boot/config/gcc-linaro/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/../../../../arm-linux-gnueabi/bin/ld: cannot find crt1.o: No such file or directory
+/home/wenyun/a20/CQA20Android_v1.3/lichee/boot/config/gcc-linaro/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/../../../../arm-linux-gnueabi/bin/ld: cannot find crti.o: No such file or directory
+/home/wenyun/a20/CQA20Android_v1.3/lichee/boot/config/gcc-linaro/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/../../../../arm-linux-gnueabi/bin/ld: cannot find crtbegin.o: No such file or directory
+collect2: ld returned 1 exit status
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/libs
+libstdc++.a                 libstdc++.so.6              libstdc++.so.6.0.16-gdb.py  
+libstdc++.so                libstdc++.so.6.0.16         libsupc++.a                 
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/libs
+libstdc++.a                 libstdc++.so.6              libstdc++.so.6.0.16-gdb.py  
+libstdc++.so                libstdc++.so.6.0.16         libsupc++.a                 
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/libstdc++.
+libstdc++.a                 libstdc++.so.6              libstdc++.so.6.0.16-gdb.py  
+libstdc++.so                libstdc++.so.6.0.16         
+wenyun@wenyun:~/a20/lichee$ ./boot/config/gcc-linaro/bin/arm-linux-gnueabi-gcc -std=gnu99 -o 1 ~/1.c ./boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/libstdc++.a
+/home/wenyun/a20/CQA20Android_v1.3/lichee/boot/config/gcc-linaro/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/../../../../arm-linux-gnueabi/bin/ld: cannot find crt1.o: No such file or directory
+/home/wenyun/a20/CQA20Android_v1.3/lichee/boot/config/gcc-linaro/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/../../../../arm-linux-gnueabi/bin/ld: cannot find crti.o: No such file or directory
+/home/wenyun/a20/CQA20Android_v1.3/lichee/boot/config/gcc-linaro/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/../../../../arm-linux-gnueabi/bin/ld: cannot find crtbegin.o: No such file or directory
+collect2: ld returned 1 exit status
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ cd boot/
+wenyun@wenyun:~/a20/lichee/boot$ grep crti.o * -r
+Binary file config/gcc-linaro/arm-linux-gnueabi/bin/c++ matches
+Binary file config/gcc-linaro/arm-linux-gnueabi/bin/gcc matches
+Binary file config/gcc-linaro/arm-linux-gnueabi/bin/g++ matches
+Binary file config/gcc-linaro/arm-linux-gnueabi/bin/gfortran matches
+Binary file config/gcc-linaro/bin/arm-linux-gnueabi-gcc-4.6.3 matches
+Binary file config/gcc-linaro/bin/arm-linux-gnueabi-g++ matches
+Binary file config/gcc-linaro/bin/arm-linux-gnueabi-gfortran matches
+Binary file config/gcc-linaro/bin/arm-linux-gnueabi-c++ matches
+Binary file config/gcc-linaro/bin/arm-linux-gnueabi-gcc matches
+Binary file config/gcc-linaro/bin/arm-linux-gnueabi-cpp matches
+config/gcc-linaro/lib/gcc/arm-linux-gnueabi/4.6.3/plugin/include/config/gnu-user.h:   crti.o%s %{static:crtbeginT.o%s;shared|pie:crtbeginS.o%s;:crtbegin.o%s}"
+config/gcc-linaro/lib/gcc/arm-linux-gnueabi/4.6.3/plugin/include/config/gnu-user.h:   crti.o%s %{static:crtbeginT.o%s;shared|pie:crtbeginS.o%s;:crtbegin.o%s}"
+wenyun@wenyun:~/a20/lichee/boot$ ./config/gcc-linaro/arm-linux-gnueabi/bin/gcc -std=gnu99 -o 1 ~/1.c -L ./boot/config/gcc-linaro/arm-linux-gnueabi/libc/lib/
+gcc: error trying to exec 'cc1': execvp: No such file or directory
+wenyun@wenyun:~/a20/lichee/boot$ 
+wenyun@wenyun:~/a20/lichee/boot$ ./config/gcc-linaro/arm-linux-gnueabi/bin/gcc -std=gnu99 -o 1 ~/1.c 
+gcc: error trying to exec 'cc1': execvp: No such file or directory
+wenyun@wenyun:~/a20/lichee/boot$ 
+wenyun@wenyun:~/a20/lichee/boot$ 
+wenyun@wenyun:~/a20/lichee/boot$ ./config/gcc-linaro/arm-linux-gnueabi/bin/g++ -std=gnu99 -o 1 ~/1.c 
+g++: error trying to exec 'cc1plus': execvp: No such file or directory
+wenyun@wenyun:~/a20/lichee/boot$ 
+wenyun@wenyun:~/a20/lichee/boot$ ./config/gcc-linaro/arm-linux-gnueabi/bin/ -std=gnu99 -o 1 ~/1.c 
+ar        c++       gcc       ld        ld.gold   objcopy   ranlib    
+as        g++       gfortran  ld.bfd    nm        objdump   strip     
+wenyun@wenyun:~/a20/lichee/boot$ ./config/gcc-linaro/arm-linux-gnueabi/bin/c++ -std=gnu99 -o 1 ~/1.c 
+c++: error trying to exec 'cc1plus': execvp: No such file or directory
+wenyun@wenyun:~/a20/lichee/boot$ 
+wenyun@wenyun:~/a20/lichee/boot$ 
+wenyun@wenyun:~/a20/lichee/boot$ 
+wenyun@wenyun:~/a20/lichee/boot$ 
+wenyun@wenyun:~/a20/lichee/boot$ 
+wenyun@wenyun:~/a20/lichee/boot$ ls
+boot0  boot1  config  Makefile  pack  workspace
+wenyun@wenyun:~/a20/lichee/boot$ cd ..
+wenyun@wenyun:~/a20/lichee$ ls
+boot              build_dragonboard.sh  buildroot  clean.sh           linux-3.4  README          tools
+build_android.sh  build_pack.sh         build.sh   external-packages  out        sys_config.fex  u-boot
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ cd u-boot/
+wenyun@wenyun:~/a20/lichee/u-boot$ ls
+api    boards.cfg    common     CREDITS  drivers   include      MAKEALL   mmc_spl     net          README           spl         u-boot      u-boot.map
+arch   build-all.sh  config.mk  disk     examples  lib          Makefile  nand_spl    onenand_ipl  rules.mk         System.map  u-boot.bin  u-boot.srec
+board  build.sh      COPYING    doc      fs        MAINTAINERS  mkconfig  nand_sunxi  post         snapshot.commit  tools       u-boot.lds
+wenyun@wenyun:~/a20/lichee/u-boot$ vim Makefile 
+wenyun@wenyun:~/a20/lichee/u-boot$ vim build.sh 
+wenyun@wenyun:~/a20/lichee/u-boot$ ./build.sh 
+awk '(NF && $1 !~ /^#/) { print $1 ": " $1 "_config; $(MAKE)" }' boards.cfg > .boards.depend
+Configuring for sun7i board...
+make
+make[1]: Entering directory `/home/wenyun/a20/CQA20Android_v1.3/lichee/u-boot'
+Generating include/autoconf.mk
+Generating include/autoconf.mk.dep
+make[1]: Leaving directory `/home/wenyun/a20/CQA20Android_v1.3/lichee/u-boot'
+make[1]: Entering directory `/home/wenyun/a20/CQA20Android_v1.3/lichee/u-boot'
+arm-linux-gnueabi-gcc -DDO_DEPS_ONLY \
+	-g  -Os   -fno-common -ffixed-r8 -msoft-float   -D__KERNEL__ -DCONFIG_SYS_TEXT_BASE=0x4A000000 -I/home/wenyun/a20/CQA20Android_v1.3/lichee/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/wenyun/a20/CQA20Android_v1.3/lichee/out/linux/common/buildroot/external-toolchain/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -marm  -mabi=aapcs-linux -mno-thumb-interwork -march=armv5 -Wall -Wstrict-prototypes -fno-stack-protector -Wno-format-nonliteral -Wno-format-security   \
+	-o lib/asm-offsets.s lib/asm-offsets.c -c -S
+if [ -f arch/arm/cpu/armv7/sunxi/asm-offsets.c ];then \
+	arm-linux-gnueabi-gcc -DDO_DEPS_ONLY \
+	-g  -Os   -fno-common -ffixed-r8 -msoft-float   -D__KERNEL__ -DCONFIG_SYS_TEXT_BASE=0x4A000000 -I/home/wenyun/a20/CQA20Android_v1.3/lichee/u-boot/include -fno-builtin -ffreestanding -nostdinc -isystem /home/wenyun/a20/CQA20Android_v1.3/lichee/out/linux/common/buildroot/external-toolchain/bin/../lib/gcc/arm-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -marm  -mabi=aapcs-linux -mno-thumb-interwork -march=armv5 -Wall -Wstrict-prototypes -fno-stack-protector -Wno-format-nonliteral -Wno-format-security   \
+		-o arch/arm/cpu/armv7/sunxi/asm-offsets.s arch/arm/cpu/armv7/sunxi/asm-offsets.c -c -S; \
+else \
+	touch arch/arm/cpu/armv7/sunxi/asm-offsets.s; \
+fi
+Generating include/generated/asm-offsets.h
+tools/scripts/make-asm-offsets arch/arm/cpu/armv7/sunxi/asm-offsets.s include/generated/asm-offsets.h
+^Cmake[1]: *** [lib/asm-offsets.s] Interrupt
+make: *** [sun7i] Interrupt
+wenyun@wenyun:~/a20/lichee/u-boot$ arm-linux-gnueabi-gcc
+The program 'arm-linux-gnueabi-gcc' is currently not installed. You can install it by typing:
+sudo apt install gcc-arm-linux-gnueabi
+wenyun@wenyun:~/a20/lichee/u-boot$ grep arm-linux- * 
+grep: api: Is a directory
+grep: arch: Is a directory
+grep: board: Is a directory
+build.sh:            make distclean CROSS_COMPILE=arm-linux-gnueabi-
+build.sh:            make distclean CROSS_COMPILE=arm-linux-gnueabi-
+build.sh:            make -j${jobs} ${LICHEE_CHIP} CROSS_COMPILE=arm-linux-gnueabi-
+grep: common: Is a directory
+grep: disk: Is a directory
+grep: doc: Is a directory
+grep: drivers: Is a directory
+grep: examples: Is a directory
+grep: fs: Is a directory
+grep: include: Is a directory
+grep: lib: Is a directory
+Makefile:CROSS_COMPILE ?= arm-linux-gnueabi-
+grep: mmc_spl: Is a directory
+grep: nand_spl: Is a directory
+grep: nand_sunxi: Is a directory
+grep: net: Is a directory
+grep: onenand_ipl: Is a directory
+grep: post: Is a directory
+grep: spl: Is a directory
+grep: tools: Is a directory
+wenyun@wenyun:~/a20/lichee/u-boot$ 
+wenyun@wenyun:~/a20/lichee/u-boot$ vim build.sh 
+wenyun@wenyun:~/a20/lichee/u-boot$ cd .. 
+wenyun@wenyun:~/a20/lichee$ find -name external-toolchain
+./out/android/common/buildroot/external-toolchain
+./out/linux/common/buildroot/external-toolchain
+wenyun@wenyun:~/a20/lichee$ export PATH=$PATH:$(pwd)//out/linux/common/buildroot/external-toolchain/bin
+wenyun@wenyun:~/a20/lichee$ print $PATH
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/%{ <-- HERE (.*?)}/ at /usr/bin/print line 528.
+Error: no such file "/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/wenyun/a20/lichee//out/linux/common/buildroot/external-toolchain/bin' (No such file or directory)::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/wenyun/a20/lichee//out/linux/common/buildroot/external-toolchain/bin"
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ arm
+arm2hpdl                           arm-linux-gnueabi-g++              arm-linux-gnueabi-ld               arm-linux-gnueabi-pkg-config-real
+arm-linux-gnueabi-addr2line        arm-linux-gnueabi-gcc              arm-linux-gnueabi-ld.bfd           arm-linux-gnueabi-ranlib
+arm-linux-gnueabi-ar               arm-linux-gnueabi-gcc-4.6.3        arm-linux-gnueabi-ldd              arm-linux-gnueabi-readelf
+arm-linux-gnueabi-as               arm-linux-gnueabi-gcov             arm-linux-gnueabi-ld.gold          arm-linux-gnueabi-size
+arm-linux-gnueabi-c++              arm-linux-gnueabi-gdb              arm-linux-gnueabi-nm               arm-linux-gnueabi-strings
+arm-linux-gnueabi-c++filt          arm-linux-gnueabi-gdbtui           arm-linux-gnueabi-objcopy          arm-linux-gnueabi-strip
+arm-linux-gnueabi-cpp              arm-linux-gnueabi-gfortran         arm-linux-gnueabi-objdump          
+arm-linux-gnueabi-elfedit          arm-linux-gnueabi-gprof            arm-linux-gnueabi-pkg-config       
+wenyun@wenyun:~/a20/lichee$ arm
+arm2hpdl                           arm-linux-gnueabi-g++              arm-linux-gnueabi-ld               arm-linux-gnueabi-pkg-config-real
+arm-linux-gnueabi-addr2line        arm-linux-gnueabi-gcc              arm-linux-gnueabi-ld.bfd           arm-linux-gnueabi-ranlib
+arm-linux-gnueabi-ar               arm-linux-gnueabi-gcc-4.6.3        arm-linux-gnueabi-ldd              arm-linux-gnueabi-readelf
+arm-linux-gnueabi-as               arm-linux-gnueabi-gcov             arm-linux-gnueabi-ld.gold          arm-linux-gnueabi-size
+arm-linux-gnueabi-c++              arm-linux-gnueabi-gdb              arm-linux-gnueabi-nm               arm-linux-gnueabi-strings
+arm-linux-gnueabi-c++filt          arm-linux-gnueabi-gdbtui           arm-linux-gnueabi-objcopy          arm-linux-gnueabi-strip
+arm-linux-gnueabi-cpp              arm-linux-gnueabi-gfortran         arm-linux-gnueabi-objdump          
+arm-linux-gnueabi-elfedit          arm-linux-gnueabi-gprof            arm-linux-gnueabi-pkg-config       
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-gcc -o 1 ~/1.c
+/home/wenyun/1.c: In function ¡®main¡¯:
+/home/wenyun/1.c:17:4: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:17:4: note: use option -std=c99 or -std=gnu99 to compile your code
+/home/wenyun/1.c:34:4: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:44:7: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:46:23: error: redefinition of ¡®i¡¯
+/home/wenyun/1.c:44:23: note: previous definition of ¡®i¡¯ was here
+/home/wenyun/1.c:46:7: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:52:10: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:54:26: error: redefinition of ¡®j¡¯
+/home/wenyun/1.c:52:26: note: previous definition of ¡®j¡¯ was here
+/home/wenyun/1.c:54:10: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:63:23: error: redefinition of ¡®permutation_Index¡¯
+/home/wenyun/1.c:47:9: note: previous definition of ¡®permutation_Index¡¯ was here
+/home/wenyun/1.c:63:7: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:73:13: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:80:13: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:138:10: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+/home/wenyun/1.c:143:13: error: ¡®for¡¯ loop initial declarations are only allowed in C99 mode
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-gcc -std=c99 -o 1 ~/1.c
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ sz -E 1
+wenyun@wenyun:~/a20/lichee$ sz -E 1                                                                                                                  arm-linux-gnueabi-gcc -o 1 ~/1.c   gcc -o 1 ~/1.c
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ ./1
+Segmentation fault (core dumped)
+wenyun@wenyun:~/a20/lichee$ ./1 12
+3968050
+Pfannkuchen(12) = 65
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-gcc -std=c99 -o 1 ~/1.c
+wenyun@wenyun:~/a20/lichee$ arm
+arm2hpdl                           arm-linux-gnueabi-g++              arm-linux-gnueabi-ld               arm-linux-gnueabi-pkg-config-real
+arm-linux-gnueabi-addr2line        arm-linux-gnueabi-gcc              arm-linux-gnueabi-ld.bfd           arm-linux-gnueabi-ranlib
+arm-linux-gnueabi-ar               arm-linux-gnueabi-gcc-4.6.3        arm-linux-gnueabi-ldd              arm-linux-gnueabi-readelf
+arm-linux-gnueabi-as               arm-linux-gnueabi-gcov             arm-linux-gnueabi-ld.gold          arm-linux-gnueabi-size
+arm-linux-gnueabi-c++              arm-linux-gnueabi-gdb              arm-linux-gnueabi-nm               arm-linux-gnueabi-strings
+arm-linux-gnueabi-c++filt          arm-linux-gnueabi-gdbtui           arm-linux-gnueabi-objcopy          arm-linux-gnueabi-strip
+arm-linux-gnueabi-cpp              arm-linux-gnueabi-gfortran         arm-linux-gnueabi-objdump          
+arm-linux-gnueabi-elfedit          arm-linux-gnueabi-gprof            arm-linux-gnueabi-pkg-config       
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-
+arm-linux-gnueabi-addr2line        arm-linux-gnueabi-gcc              arm-linux-gnueabi-ld.bfd           arm-linux-gnueabi-ranlib
+arm-linux-gnueabi-ar               arm-linux-gnueabi-gcc-4.6.3        arm-linux-gnueabi-ldd              arm-linux-gnueabi-readelf
+arm-linux-gnueabi-as               arm-linux-gnueabi-gcov             arm-linux-gnueabi-ld.gold          arm-linux-gnueabi-size
+arm-linux-gnueabi-c++              arm-linux-gnueabi-gdb              arm-linux-gnueabi-nm               arm-linux-gnueabi-strings
+arm-linux-gnueabi-c++filt          arm-linux-gnueabi-gdbtui           arm-linux-gnueabi-objcopy          arm-linux-gnueabi-strip
+arm-linux-gnueabi-cpp              arm-linux-gnueabi-gfortran         arm-linux-gnueabi-objdump          
+arm-linux-gnueabi-elfedit          arm-linux-gnueabi-gprof            arm-linux-gnueabi-pkg-config       
+arm-linux-gnueabi-g++              arm-linux-gnueabi-ld               arm-linux-gnueabi-pkg-config-real  
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-ld
+arm-linux-gnueabi-ld       arm-linux-gnueabi-ld.bfd   arm-linux-gnueabi-ldd      arm-linux-gnueabi-ld.gold  
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-ld
+arm-linux-gnueabi-ld       arm-linux-gnueabi-ld.bfd   arm-linux-gnueabi-ldd      arm-linux-gnueabi-ld.gold  
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-ldd  1 
+arm-linux-gnueabi-ldd: no root given
+Try `arm-linux-gnueabi-ldd --help' for more information
+wenyun@wenyun:~/a20/lichee$ sudo arm-linux-gnueabi-ldd  1 
+[sudo] password for wenyun: 
+sudo: arm-linux-gnueabi-ldd: command not found
+wenyun@wenyun:~/a20/lichee$ sudo arm-linux-gnueabi-ldd  1 
+sudo: arm-linux-gnueabi-ldd: command not found
+wenyun@wenyun:~/a20/lichee$ read
+read            readarray       readelf         readelf.single  readlink        readonly        readprofile     
+wenyun@wenyun:~/a20/lichee$ readelf 1
+Usage: readelf <option(s)> elf-file(s)
+ Display information about the contents of ELF format files
+ Options are:
+  -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
+  -h --file-header       Display the ELF file header
+  -l --program-headers   Display the program headers
+     --segments          An alias for --program-headers
+  -S --section-headers   Display the sections' header
+     --sections          An alias for --section-headers
+  -g --section-groups    Display the section groups
+  -t --section-details   Display the section details
+  -e --headers           Equivalent to: -h -l -S
+  -s --syms              Display the symbol table
+     --symbols           An alias for --syms
+  --dyn-syms             Display the dynamic symbol table
+  -n --notes             Display the core notes (if present)
+  -r --relocs            Display the relocations (if present)
+  -u --unwind            Display the unwind info (if present)
+  -d --dynamic           Display the dynamic section (if present)
+  -V --version-info      Display the version sections (if present)
+  -A --arch-specific     Display architecture specific information (if any)
+  -c --archive-index     Display the symbol/file index in an archive
+  -D --use-dynamic       Use the dynamic section info when displaying symbols
+  -x --hex-dump=<number|name>
+                         Dump the contents of section <number|name> as bytes
+  -p --string-dump=<number|name>
+                         Dump the contents of section <number|name> as strings
+  -R --relocated-dump=<number|name>
+                         Dump the contents of section <number|name> as relocated bytes
+  -z --decompress        Decompress section before dumping it
+  -w[lLiaprmfFsoRt] or
+  --debug-dump[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+               =frames-interp,=str,=loc,=Ranges,=pubtypes,
+               =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+               =addr,=cu_index]
+                         Display the contents of DWARF2 debug sections
+  --dwarf-depth=N        Do not display DIEs at depth N or greater
+  --dwarf-start=N        Display DIEs starting with N, at the same depth
+                         or deeper
+  -I --histogram         Display histogram of bucket list lengths
+  -W --wide              Allow output width to exceed 80 characters
+  @<file>                Read options from <file>
+  -H --help              Display this information
+  -v --version           Display the version number of readelf
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ read
+read            readarray       readelf         readelf.single  readlink        readonly        readprofile     
+wenyun@wenyun:~/a20/lichee$ readelf   ./1
+Usage: readelf <option(s)> elf-file(s)
+ Display information about the contents of ELF format files
+ Options are:
+  -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
+  -h --file-header       Display the ELF file header
+  -l --program-headers   Display the program headers
+     --segments          An alias for --program-headers
+  -S --section-headers   Display the sections' header
+     --sections          An alias for --section-headers
+  -g --section-groups    Display the section groups
+  -t --section-details   Display the section details
+  -e --headers           Equivalent to: -h -l -S
+  -s --syms              Display the symbol table
+     --symbols           An alias for --syms
+  --dyn-syms             Display the dynamic symbol table
+  -n --notes             Display the core notes (if present)
+  -r --relocs            Display the relocations (if present)
+  -u --unwind            Display the unwind info (if present)
+  -d --dynamic           Display the dynamic section (if present)
+  -V --version-info      Display the version sections (if present)
+  -A --arch-specific     Display architecture specific information (if any)
+  -c --archive-index     Display the symbol/file index in an archive
+  -D --use-dynamic       Use the dynamic section info when displaying symbols
+  -x --hex-dump=<number|name>
+                         Dump the contents of section <number|name> as bytes
+  -p --string-dump=<number|name>
+                         Dump the contents of section <number|name> as strings
+  -R --relocated-dump=<number|name>
+                         Dump the contents of section <number|name> as relocated bytes
+  -z --decompress        Decompress section before dumping it
+  -w[lLiaprmfFsoRt] or
+  --debug-dump[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+               =frames-interp,=str,=loc,=Ranges,=pubtypes,
+               =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+               =addr,=cu_index]
+                         Display the contents of DWARF2 debug sections
+  --dwarf-depth=N        Do not display DIEs at depth N or greater
+  --dwarf-start=N        Display DIEs starting with N, at the same depth
+                         or deeper
+  -I --histogram         Display histogram of bucket list lengths
+  -W --wide              Allow output width to exceed 80 characters
+  @<file>                Read options from <file>
+  -H --help              Display this information
+  -v --version           Display the version number of readelf
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ ls
+1     build_android.sh      build_pack.sh  build.sh  external-packages  out     sys_config.fex  u-boot
+boot  build_dragonboard.sh  buildroot      clean.sh  linux-3.4          README  tools
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ readelf  -a  ./1
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           ARM
+  Version:                           0x1
+  Entry point address:               0x8351
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          4136 (bytes into file)
+  Flags:                             0x5000002, Version5 EABI, <unknown>
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         8
+  Size of section headers:           40 (bytes)
+  Number of section headers:         31
+  Section header string table index: 28
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .interp           PROGBITS        00008134 000134 000013 00   A  0   0  1
+  [ 2] .note.ABI-tag     NOTE            00008148 000148 000020 00   A  0   0  4
+  [ 3] .note.gnu.build-i NOTE            00008168 000168 000024 00   A  0   0  4
+  [ 4] .hash             HASH            0000818c 00018c 000030 04   A  5   0  4
+  [ 5] .dynsym           DYNSYM          000081bc 0001bc 000070 10   A  6   1  4
+  [ 6] .dynstr           STRTAB          0000822c 00022c 00004e 00   A  0   0  1
+  [ 7] .gnu.version      VERSYM          0000827a 00027a 00000e 02   A  5   0  2
+  [ 8] .gnu.version_r    VERNEED         00008288 000288 000020 00   A  6   1  4
+  [ 9] .rel.dyn          REL             000082a8 0002a8 000008 08   A  5   0  4
+  [10] .rel.plt          REL             000082b0 0002b0 000030 08   A  5  12  4
+  [11] .init             PROGBITS        000082e0 0002e0 00000a 00  AX  0   0  4
+  [12] .plt              PROGBITS        000082ec 0002ec 000060 04  AX  0   0  4
+  [13] .text             PROGBITS        00008350 000350 0009b4 00  AX  0   0  8
+  [14] .fini             PROGBITS        00008d04 000d04 000006 00  AX  0   0  4
+  [15] .rodata           PROGBITS        00008d0c 000d0c 000020 00   A  0   0  4
+  [16] .ARM.exidx        ARM_EXIDX       00008d2c 000d2c 000008 00  AL 13   0  4
+  [17] .eh_frame         PROGBITS        00008d34 000d34 000004 00   A  0   0  4
+  [18] .init_array       INIT_ARRAY      00010d38 000d38 000004 00  WA  0   0  4
+  [19] .fini_array       FINI_ARRAY      00010d3c 000d3c 000004 00  WA  0   0  4
+  [20] .jcr              PROGBITS        00010d40 000d40 000004 00  WA  0   0  4
+  [21] .dynamic          DYNAMIC         00010d44 000d44 0000e8 08  WA  6   0  4
+  [22] .got              PROGBITS        00010e2c 000e2c 000028 04  WA  0   0  4
+  [23] .data             PROGBITS        00010e54 000e54 000008 00  WA  0   0  4
+  [24] .bss              NOBITS          00010e5c 000e5c 000004 00  WA  0   0  1
+  [25] .comment          PROGBITS        00000000 000e5c 000064 01  MS  0   0  1
+  [26] .ARM.attributes   ARM_ATTRIBUTES  00000000 000ec0 000033 00      0   0  1
+  [27] .debug_frame      PROGBITS        00000000 000ef4 000020 00      0   0  4
+  [28] .shstrtab         STRTAB          00000000 000f14 000113 00      0   0  1
+  [29] .symtab           SYMTAB          00000000 001500 0006e0 10     30  81  4
+  [30] .strtab           STRTAB          00000000 001be0 00029e 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), T (TLS), E (exclude), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  EXIDX          0x000d2c 0x00008d2c 0x00008d2c 0x00008 0x00008 R   0x4
+  PHDR           0x000034 0x00008034 0x00008034 0x00100 0x00100 R E 0x4
+  INTERP         0x000134 0x00008134 0x00008134 0x00013 0x00013 R   0x1
+      [Requesting program interpreter: /lib/ld-linux.so.3]
+  LOAD           0x000000 0x00008000 0x00008000 0x00d38 0x00d38 R E 0x8000
+  LOAD           0x000d38 0x00010d38 0x00010d38 0x00124 0x00128 RW  0x8000
+  DYNAMIC        0x000d44 0x00010d44 0x00010d44 0x000e8 0x000e8 RW  0x4
+  NOTE           0x000148 0x00008148 0x00008148 0x00044 0x00044 R   0x4
+  GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x4
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .ARM.exidx 
+   01     
+   02     .interp 
+   03     .interp .note.ABI-tag .note.gnu.build-id .hash .dynsym .dynstr .gnu.version .gnu.version_r .rel.dyn .rel.plt .init .plt .text .fini .rodata .ARM.exidx .eh_frame 
+   04     .init_array .fini_array .jcr .dynamic .got .data .bss 
+   05     .dynamic 
+   06     .note.ABI-tag .note.gnu.build-id 
+   07     
+
+Dynamic section at offset 0xd44 contains 24 entries:
+  Tag        Type                         Name/Value
+ 0x00000001 (NEEDED)                     Shared library: [libc.so.6]
+ 0x0000000c (INIT)                       0x82e1
+ 0x0000000d (FINI)                       0x8d05
+ 0x00000019 (INIT_ARRAY)                 0x10d38
+ 0x0000001b (INIT_ARRAYSZ)               4 (bytes)
+ 0x0000001a (FINI_ARRAY)                 0x10d3c
+ 0x0000001c (FINI_ARRAYSZ)               4 (bytes)
+ 0x00000004 (HASH)                       0x818c
+ 0x00000005 (STRTAB)                     0x822c
+ 0x00000006 (SYMTAB)                     0x81bc
+ 0x0000000a (STRSZ)                      78 (bytes)
+ 0x0000000b (SYMENT)                     16 (bytes)
+ 0x00000015 (DEBUG)                      0x0
+ 0x00000003 (PLTGOT)                     0x10e2c
+ 0x00000002 (PLTRELSZ)                   48 (bytes)
+ 0x00000014 (PLTREL)                     REL
+ 0x00000017 (JMPREL)                     0x82b0
+ 0x00000011 (REL)                        0x82a8
+ 0x00000012 (RELSZ)                      8 (bytes)
+ 0x00000013 (RELENT)                     8 (bytes)
+ 0x6ffffffe (VERNEED)                    0x8288
+ 0x6fffffff (VERNEEDNUM)                 1
+ 0x6ffffff0 (VERSYM)                     0x827a
+ 0x00000000 (NULL)                       0x0
+
+Relocation section '.rel.dyn' at offset 0x2a8 contains 1 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+00010e50  00000415 R_ARM_GLOB_DAT    00000000   __gmon_start__
+
+Relocation section '.rel.plt' at offset 0x2b0 contains 6 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+00010e38  00000116 R_ARM_JUMP_SLOT   00008300   raise@GLIBC_2.4
+00010e3c  00000216 R_ARM_JUMP_SLOT   0000830c   printf@GLIBC_2.4
+00010e40  00000316 R_ARM_JUMP_SLOT   00008318   __libc_start_main@GLIBC_2.4
+00010e44  00000416 R_ARM_JUMP_SLOT   00000000   __gmon_start__
+00010e48  00000516 R_ARM_JUMP_SLOT   00008334   atoi@GLIBC_2.4
+00010e4c  00000616 R_ARM_JUMP_SLOT   00008340   abort@GLIBC_2.4
+
+Unwind table index '.ARM.exidx' at offset 0xd2c contains 1 entries:
+
+0x8350 <_start>: 0x1 [cantunwind]
+
+
+Symbol table '.dynsym' contains 7 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00008300     0 FUNC    GLOBAL DEFAULT  UND raise@GLIBC_2.4 (2)
+     2: 0000830c     0 FUNC    GLOBAL DEFAULT  UND printf@GLIBC_2.4 (2)
+     3: 00008318     0 FUNC    GLOBAL DEFAULT  UND __libc_start_main@GLIBC_2.4 (2)
+     4: 00000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+     5: 00008334     0 FUNC    GLOBAL DEFAULT  UND atoi@GLIBC_2.4 (2)
+     6: 00008340     0 FUNC    GLOBAL DEFAULT  UND abort@GLIBC_2.4 (2)
+
+Symbol table '.symtab' contains 110 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00008134     0 SECTION LOCAL  DEFAULT    1 
+     2: 00008148     0 SECTION LOCAL  DEFAULT    2 
+     3: 00008168     0 SECTION LOCAL  DEFAULT    3 
+     4: 0000818c     0 SECTION LOCAL  DEFAULT    4 
+     5: 000081bc     0 SECTION LOCAL  DEFAULT    5 
+     6: 0000822c     0 SECTION LOCAL  DEFAULT    6 
+     7: 0000827a     0 SECTION LOCAL  DEFAULT    7 
+     8: 00008288     0 SECTION LOCAL  DEFAULT    8 
+     9: 000082a8     0 SECTION LOCAL  DEFAULT    9 
+    10: 000082b0     0 SECTION LOCAL  DEFAULT   10 
+    11: 000082e0     0 SECTION LOCAL  DEFAULT   11 
+    12: 000082ec     0 SECTION LOCAL  DEFAULT   12 
+    13: 00008350     0 SECTION LOCAL  DEFAULT   13 
+    14: 00008d04     0 SECTION LOCAL  DEFAULT   14 
+    15: 00008d0c     0 SECTION LOCAL  DEFAULT   15 
+    16: 00008d2c     0 SECTION LOCAL  DEFAULT   16 
+    17: 00008d34     0 SECTION LOCAL  DEFAULT   17 
+    18: 00010d38     0 SECTION LOCAL  DEFAULT   18 
+    19: 00010d3c     0 SECTION LOCAL  DEFAULT   19 
+    20: 00010d40     0 SECTION LOCAL  DEFAULT   20 
+    21: 00010d44     0 SECTION LOCAL  DEFAULT   21 
+    22: 00010e2c     0 SECTION LOCAL  DEFAULT   22 
+    23: 00010e54     0 SECTION LOCAL  DEFAULT   23 
+    24: 00010e5c     0 SECTION LOCAL  DEFAULT   24 
+    25: 00000000     0 SECTION LOCAL  DEFAULT   25 
+    26: 00000000     0 SECTION LOCAL  DEFAULT   26 
+    27: 00000000     0 SECTION LOCAL  DEFAULT   27 
+    28: 00008148     0 NOTYPE  LOCAL  DEFAULT    2 $d
+    29: 00008350     0 NOTYPE  LOCAL  DEFAULT   13 $t
+    30: 00008d2c     0 NOTYPE  LOCAL  DEFAULT   16 $d
+    31: 0000837a     0 NOTYPE  LOCAL  DEFAULT   13 $d
+    32: 00008d0c     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    33: 00010e54     0 NOTYPE  LOCAL  DEFAULT   23 $d
+    34: 00008388     0 NOTYPE  LOCAL  DEFAULT   13 $t
+    35: 00008389     0 FUNC    LOCAL  DEFAULT   13 call_gmon_start
+    36: 00008398     0 NOTYPE  LOCAL  DEFAULT   13 $d
+    37: 000082e0     0 NOTYPE  LOCAL  DEFAULT   11 $t
+    38: 00008d04     0 NOTYPE  LOCAL  DEFAULT   14 $t
+    39: 000082e8     0 NOTYPE  LOCAL  DEFAULT   11 $t
+    40: 00008d08     0 NOTYPE  LOCAL  DEFAULT   14 $t
+    41: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+    42: 00010d40     0 OBJECT  LOCAL  DEFAULT   20 __JCR_LIST__
+    43: 00010e58     0 NOTYPE  LOCAL  DEFAULT   23 $d
+    44: 000083a0     0 NOTYPE  LOCAL  DEFAULT   13 $t
+    45: 000083a1     0 FUNC    LOCAL  DEFAULT   13 __do_global_dtors_aux
+    46: 000083ac     0 NOTYPE  LOCAL  DEFAULT   13 $d
+    47: 00010e5c     1 OBJECT  LOCAL  DEFAULT   24 completed.5471
+    48: 00010d3c     0 NOTYPE  LOCAL  DEFAULT   19 $d
+    49: 00010d3c     0 OBJECT  LOCAL  DEFAULT   19 __do_global_dtors_aux_fin
+    50: 000083b0     0 NOTYPE  LOCAL  DEFAULT   13 $t
+    51: 000083b1     0 FUNC    LOCAL  DEFAULT   13 frame_dummy
+    52: 000083c0     0 NOTYPE  LOCAL  DEFAULT   13 $d
+    53: 00010d38     0 NOTYPE  LOCAL  DEFAULT   18 $d
+    54: 00010d38     0 OBJECT  LOCAL  DEFAULT   18 __frame_dummy_init_array_
+    55: 00010e5c     0 NOTYPE  LOCAL  DEFAULT   24 $d
+    56: 00000000     0 FILE    LOCAL  DEFAULT  ABS 1.c
+    57: 00008d10     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    58: 000083c8     0 NOTYPE  LOCAL  DEFAULT   13 $t
+    59: 00008a00     0 NOTYPE  LOCAL  DEFAULT   13 $t
+    60: 00008a06     0 NOTYPE  LOCAL  DEFAULT   13 .divsi3_skip_div0_test
+    61: 00000000     0 NOTYPE  LOCAL  DEFAULT  ABS shift
+    62: 00000010     0 NOTYPE  LOCAL  DEFAULT   27 $d
+    63: 00008cb0     0 NOTYPE  LOCAL  DEFAULT   13 $t
+    64: 00008cbc     0 NOTYPE  LOCAL  DEFAULT   13 $t
+    65: 00008cf8     0 NOTYPE  LOCAL  DEFAULT   13 $d
+    66: 00008d00     0 NOTYPE  LOCAL  DEFAULT   13 $t
+    67: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+    68: 00008d34     0 NOTYPE  LOCAL  DEFAULT   17 $d
+    69: 00008d34     0 OBJECT  LOCAL  DEFAULT   17 __FRAME_END__
+    70: 00010d40     0 NOTYPE  LOCAL  DEFAULT   20 $d
+    71: 00010d40     0 OBJECT  LOCAL  DEFAULT   20 __JCR_END__
+    72: 00010d3c     0 NOTYPE  LOCAL  DEFAULT   18 __init_array_end
+    73: 00010d44     0 OBJECT  LOCAL  DEFAULT   21 _DYNAMIC
+    74: 00010d38     0 NOTYPE  LOCAL  DEFAULT   18 __init_array_start
+    75: 00010e2c     0 OBJECT  LOCAL  DEFAULT   22 _GLOBAL_OFFSET_TABLE_
+    76: 000082ec     0 NOTYPE  LOCAL  DEFAULT   12 $a
+    77: 000082fc     0 NOTYPE  LOCAL  DEFAULT   12 $d
+    78: 00008300     0 NOTYPE  LOCAL  DEFAULT   12 $a
+    79: 00008324     0 NOTYPE  LOCAL  DEFAULT   12 $t
+    80: 00008328     0 NOTYPE  LOCAL  DEFAULT   12 $a
+    81: 00008d01     2 FUNC    GLOBAL DEFAULT   13 __libc_csu_fini
+    82: 00008300     0 FUNC    GLOBAL DEFAULT  UND raise@@GLIBC_2.4
+    83: 00010e54     0 NOTYPE  WEAK   DEFAULT   23 data_start
+    84: 0000830c     0 FUNC    GLOBAL DEFAULT  UND printf@@GLIBC_2.4
+    85: 00010e5c     0 NOTYPE  GLOBAL DEFAULT  ABS __bss_start__
+    86: 00010e60     0 NOTYPE  GLOBAL DEFAULT  ABS _bss_end__
+    87: 00010e5c     0 NOTYPE  GLOBAL DEFAULT  ABS _edata
+    88: 00008d05     0 FUNC    GLOBAL DEFAULT   14 _fini
+    89: 00010e60     0 NOTYPE  GLOBAL DEFAULT  ABS __bss_end__
+    90: 00008c95    26 FUNC    GLOBAL HIDDEN    13 __aeabi_idivmod
+    91: 00008cb1    12 FUNC    WEAK   HIDDEN    13 __aeabi_ldiv0
+    92: 00010e54     0 NOTYPE  GLOBAL DEFAULT   23 __data_start
+    93: 00008318     0 FUNC    GLOBAL DEFAULT  UND __libc_start_main@@GLIBC_
+    94: 00000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+    95: 00010e58     0 OBJECT  GLOBAL HIDDEN    23 __dso_handle
+    96: 00008d0c     4 OBJECT  GLOBAL DEFAULT   15 _IO_stdin_used
+    97: 00008a01   660 FUNC    GLOBAL HIDDEN    13 __divsi3
+    98: 00008cbd    68 FUNC    GLOBAL DEFAULT   13 __libc_csu_init
+    99: 00010e60     0 NOTYPE  GLOBAL DEFAULT  ABS _end
+   100: 00008351     0 FUNC    GLOBAL DEFAULT   13 _start
+   101: 00010e60     0 NOTYPE  GLOBAL DEFAULT  ABS __end__
+   102: 00008cb1    12 FUNC    WEAK   HIDDEN    13 __aeabi_idiv0
+   103: 00010e5c     0 NOTYPE  GLOBAL DEFAULT  ABS __bss_start
+   104: 000083c9  1586 FUNC    GLOBAL DEFAULT   13 main
+   105: 00000000     0 NOTYPE  WEAK   DEFAULT  UND _Jv_RegisterClasses
+   106: 00008334     0 FUNC    GLOBAL DEFAULT  UND atoi@@GLIBC_2.4
+   107: 00008a01     0 FUNC    GLOBAL HIDDEN    13 __aeabi_idiv
+   108: 00008340     0 FUNC    GLOBAL DEFAULT  UND abort@@GLIBC_2.4
+   109: 000082e1     0 FUNC    GLOBAL DEFAULT   11 _init
+
+Histogram for bucket list length (total of 3 buckets):
+ Length  Number     % of total  Coverage
+      0  3          (100.0%)
+
+Version symbols section '.gnu.version' contains 7 entries:
+ Addr: 000000000000827a  Offset: 0x00027a  Link: 5 (.dynsym)
+  000:   0 (*local*)       2 (GLIBC_2.4)     2 (GLIBC_2.4)     2 (GLIBC_2.4)  
+  004:   0 (*local*)       2 (GLIBC_2.4)     2 (GLIBC_2.4)  
+
+Version needs section '.gnu.version_r' contains 1 entries:
+ Addr: 0x0000000000008288  Offset: 0x000288  Link: 6 (.dynstr)
+  000000: Version: 1  File: libc.so.6  Cnt: 1
+  0x0010:   Name: GLIBC_2.4  Flags: none  Version: 2
+
+Displaying notes found at file offset 0x00000148 with length 0x00000020:
+  Owner                 Data size	Description
+  GNU                  0x00000010	NT_GNU_ABI_TAG (ABI version tag)
+    OS: Linux, ABI: 2.6.16
+
+Displaying notes found at file offset 0x00000168 with length 0x00000024:
+  Owner                 Data size	Description
+  GNU                  0x00000014	NT_GNU_BUILD_ID (unique build ID bitstring)
+    Build ID: 263cd11f9f3a0516850f76130fd914ff83376a31
+Attribute Section: aeabi
+File Attributes
+  Tag_CPU_name: "7-A"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Application
+  Tag_ARM_ISA_use: Yes
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_FP_arch: VFPv3-D16
+  Tag_ABI_PCS_wchar_t: 4
+  Tag_ABI_FP_denormal: Needed
+  Tag_ABI_FP_exceptions: Needed
+  Tag_ABI_FP_number_model: IEEE 754
+  Tag_ABI_align_needed: 8-byte
+  Tag_ABI_align_preserved: 8-byte, except leaf SP
+  Tag_ABI_enum_size: int
+  Tag_ABI_HardFP_use: Deprecated
+  Tag_CPU_unaligned_access: v6
+  Tag_DIV_use: Not allowed
+wenyun@wenyun:~/a20/lichee$ arm
+arm2hpdl                           arm-linux-gnueabi-g++              arm-linux-gnueabi-ld               arm-linux-gnueabi-pkg-config-real
+arm-linux-gnueabi-addr2line        arm-linux-gnueabi-gcc              arm-linux-gnueabi-ld.bfd           arm-linux-gnueabi-ranlib
+arm-linux-gnueabi-ar               arm-linux-gnueabi-gcc-4.6.3        arm-linux-gnueabi-ldd              arm-linux-gnueabi-readelf
+arm-linux-gnueabi-as               arm-linux-gnueabi-gcov             arm-linux-gnueabi-ld.gold          arm-linux-gnueabi-size
+arm-linux-gnueabi-c++              arm-linux-gnueabi-gdb              arm-linux-gnueabi-nm               arm-linux-gnueabi-strings
+arm-linux-gnueabi-c++filt          arm-linux-gnueabi-gdbtui           arm-linux-gnueabi-objcopy          arm-linux-gnueabi-strip
+arm-linux-gnueabi-cpp              arm-linux-gnueabi-gfortran         arm-linux-gnueabi-objdump          
+arm-linux-gnueabi-elfedit          arm-linux-gnueabi-gprof            arm-linux-gnueabi-pkg-config       
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-readelf  1
+Usage: readelf <option(s)> elf-file(s)
+ Display information about the contents of ELF format files
+ Options are:
+  -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
+  -h --file-header       Display the ELF file header
+  -l --program-headers   Display the program headers
+     --segments          An alias for --program-headers
+  -S --section-headers   Display the sections' header
+     --sections          An alias for --section-headers
+  -g --section-groups    Display the section groups
+  -t --section-details   Display the section details
+  -e --headers           Equivalent to: -h -l -S
+  -s --syms              Display the symbol table
+     --symbols           An alias for --syms
+  --dyn-syms             Display the dynamic symbol table
+  -n --notes             Display the core notes (if present)
+  -r --relocs            Display the relocations (if present)
+  -u --unwind            Display the unwind info (if present)
+  -d --dynamic           Display the dynamic section (if present)
+  -V --version-info      Display the version sections (if present)
+  -A --arch-specific     Display architecture specific information (if any).
+  -c --archive-index     Display the symbol/file index in an archive
+  -D --use-dynamic       Use the dynamic section info when displaying symbols
+  -x --hex-dump=<number|name>
+                         Dump the contents of section <number|name> as bytes
+  -p --string-dump=<number|name>
+                         Dump the contents of section <number|name> as strings
+  -R --relocated-dump=<number|name>
+                         Dump the contents of section <number|name> as relocated bytes
+  -w[lLiaprmfFsoRt] or
+  --debug-dump[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+               =frames-interp,=str,=loc,=Ranges,=pubtypes,
+               =gdb_index,=trace_info,=trace_abbrev,=trace_aranges]
+                         Display the contents of DWARF2 debug sections
+  --dwarf-depth=N        Do not display DIEs at depth N or greater
+  --dwarf-start=N        Display DIEs starting with N, at the same depth
+                         or deeper
+  -I --histogram         Display histogram of bucket list lengths
+  -W --wide              Allow output width to exceed 80 characters
+  @<file>                Read options from <file>
+  -H --help              Display this information
+  -v --version           Display the version number of readelf
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-readelf  -d  1
+
+Dynamic section at offset 0xd44 contains 24 entries:
+  Tag        Type                         Name/Value
+ 0x00000001 (NEEDED)                     Shared library: [libc.so.6]
+ 0x0000000c (INIT)                       0x82e1
+ 0x0000000d (FINI)                       0x8d05
+ 0x00000019 (INIT_ARRAY)                 0x10d38
+ 0x0000001b (INIT_ARRAYSZ)               4 (bytes)
+ 0x0000001a (FINI_ARRAY)                 0x10d3c
+ 0x0000001c (FINI_ARRAYSZ)               4 (bytes)
+ 0x00000004 (HASH)                       0x818c
+ 0x00000005 (STRTAB)                     0x822c
+ 0x00000006 (SYMTAB)                     0x81bc
+ 0x0000000a (STRSZ)                      78 (bytes)
+ 0x0000000b (SYMENT)                     16 (bytes)
+ 0x00000015 (DEBUG)                      0x0
+ 0x00000003 (PLTGOT)                     0x10e2c
+ 0x00000002 (PLTRELSZ)                   48 (bytes)
+ 0x00000014 (PLTREL)                     REL
+ 0x00000017 (JMPREL)                     0x82b0
+ 0x00000011 (REL)                        0x82a8
+ 0x00000012 (RELSZ)                      8 (bytes)
+ 0x00000013 (RELENT)                     8 (bytes)
+ 0x6ffffffe (VERNEED)                    0x8288
+ 0x6fffffff (VERNEEDNUM)                 1
+ 0x6ffffff0 (VERSYM)                     0x827a
+ 0x00000000 (NULL)                       0x0
+wenyun@wenyun:~/a20/lichee$ arm-linux-gnueabi-readelf  -l  1
+
+Elf file type is EXEC (Executable file)
+Entry point 0x8351
+There are 8 program headers, starting at offset 52
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  EXIDX          0x000d2c 0x00008d2c 0x00008d2c 0x00008 0x00008 R   0x4
+  PHDR           0x000034 0x00008034 0x00008034 0x00100 0x00100 R E 0x4
+  INTERP         0x000134 0x00008134 0x00008134 0x00013 0x00013 R   0x1
+      [Requesting program interpreter: /lib/ld-linux.so.3]
+  LOAD           0x000000 0x00008000 0x00008000 0x00d38 0x00d38 R E 0x8000
+  LOAD           0x000d38 0x00010d38 0x00010d38 0x00124 0x00128 RW  0x8000
+  DYNAMIC        0x000d44 0x00010d44 0x00010d44 0x000e8 0x000e8 RW  0x4
+  NOTE           0x000148 0x00008148 0x00008148 0x00044 0x00044 R   0x4
+  GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x4
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .ARM.exidx 
+   01     
+   02     .interp 
+   03     .interp .note.ABI-tag .note.gnu.build-id .hash .dynsym .dynstr .gnu.version .gnu.version_r .rel.dyn .rel.plt .init .plt .text .fini .rodata .ARM.exidx .eh_frame 
+   04     .init_array .fini_array .jcr .dynamic .got .data .bss 
+   05     .dynamic 
+   06     .note.ABI-tag .note.gnu.build-id 
+   07     
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ ls
+1     build_android.sh      build_pack.sh  build.sh  external-packages  out     sys_config.fex  u-boot
+boot  build_dragonboard.sh  buildroot      clean.sh  linux-3.4          README  tools
+wenyun@wenyun:~/a20/lichee$ gcc -o 2 ~/1.c
+wenyun@wenyun:~/a20/lichee$ ./2 12
+3968050
+Pfannkuchen(12) = 65
+wenyun@wenyun:~/a20/lichee$ time ./2 12
+3968050
+Pfannkuchen(12) = 65
+
+real	0m56.595s
+user	0m56.592s
+sys	0m0.000s
+wenyun@wenyun:~/a20/lichee$ cat /proc/cpuinfo 
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i3-4150 CPU @ 3.50GHz
+stepping	: 3
+microcode	: 0x9
+cpu MHz		: 1401.367
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm arat pln pts
+bugs		:
+bogomips	: 7000.01
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i3-4150 CPU @ 3.50GHz
+stepping	: 3
+microcode	: 0x9
+cpu MHz		: 1373.613
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm arat pln pts
+bugs		:
+bogomips	: 7000.01
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i3-4150 CPU @ 3.50GHz
+stepping	: 3
+microcode	: 0x9
+cpu MHz		: 1401.093
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm arat pln pts
+bugs		:
+bogomips	: 7000.01
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i3-4150 CPU @ 3.50GHz
+stepping	: 3
+microcode	: 0x9
+cpu MHz		: 884.980
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm arat pln pts
+bugs		:
+bogomips	: 7000.01
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 
+wenyun@wenyun:~/a20/lichee$ 

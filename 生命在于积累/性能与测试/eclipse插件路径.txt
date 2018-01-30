@@ -1,0 +1,1 @@
+http://download.eclipse.org/mat/1.7/update-site/

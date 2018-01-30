@@ -1,0 +1,35 @@
+接例子中的下载，将创建文件改为使用context的方式
+
+
+InputStream is = conn.getInputStream();
+                        //raf = new RandomAccessFile(download_apk_path + filename, "rwd");
+                        //随机写文件时指定开始位置，定位文件
+                        //raf.seek(startIndex);
+                        FileOutputStream fos = context().openFileOutput(filename, Context.MODE_WORLD_READABLE);
+                        int len = 0;
+                        byte[] buffer = new byte[length];
+                        //标识已下载数据长度
+                        int totle = 0;
+                        //记录当前线程下载的数据长度下载
+                        //File file=new File(threadId+".txt");
+                        while ((len = is.read(buffer)) != -1) {
+                            Log.i(TAG, "read 1024 byte by " + 1 + " " + len);
+
+                            //raf.write(buffer, 0, len);
+                            fos.write(buffer, 0, len);
+                            totle += len;
+                            //FileOutputStream fos=new FileOutputStream(file);
+                            RandomAccessFile info = new RandomAccessFile(download_apk_path + 1 + downloadname, "rwd");
+                            info.write(String.valueOf(totle + startIndex).getBytes());
+                            //fos.write(String.valueOf(totle).getBytes());
+                            //fos.close();
+                            info.close();
+                            //更新进度条
+                            //保证统一完整
+                            synchronized (currentProcess) {
+                                //获取当前总进度
+                                currentProcess += len;
+                            }
+                        }
+                        is.close();
+                        fos.close();

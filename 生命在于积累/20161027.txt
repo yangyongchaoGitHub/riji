@@ -1,0 +1,11 @@
+if (view.getChildAt(0) != null) {
+                    //Log.i("Fragment_collector_os", "view.getChildAt(0).getTop()" + view.getChildAt(0).getTop());
+                    //topItem = firstVisibleItem;
+
+                    /*collectorLeftListView.scrollTo(collectorRightListView.getScrollX(),
+                            view.getChildAt(firstVisibleItem).getTop() + (-view.getChildAt(0).getTop()) * 2);*/
+
+                    Log.i("collectorRight_os", "y = " + (view.getChildAt(firstVisibleItem).getTop()));
+                    collectorLeftListView.invalidate(collectorRightListView.getScrollX(),
+                            view.getChildAt(firstVisibleItem).getTop() + (-view.getChildAt(0).getTop()) * 2, 0, 0);
+                }

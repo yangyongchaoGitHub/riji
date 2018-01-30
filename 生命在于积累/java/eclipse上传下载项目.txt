@@ -1,0 +1,19 @@
+上传
+安装egit
+ help-> Eclipse Marketplace   egit    -> install  ->update  restart
+ 右键项目 Team-> Shar Project...
+ 配置本地工作拷贝空间路径 
+ 右键项目Commit 要从Unstaged Changes选择项目右键放入Staged Changes中，然后Commit。 不然Team-> Remote不能push
+ 右键项目Remote->push 填项目url，填账户，密码
+	异常non-fast-forward
+	https://git.eclipse.org/r/Documentation/error-non-fast-forward.html
+	或者（在github创建的项目多选了个 Initialize this repository with a README
+	又写了几个文件，然后就上传不上去了）
+
+下载
+从Eclipse中选择File-》import-》Git-》Projects from Git
+选择next-》选择URI
+输入url
+填帐户名，填密码
+选择本地存放路径
+balabala

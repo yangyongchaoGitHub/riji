@@ -1,0 +1,7 @@
+item的xml根控件加上
+android:descendantFocusability="blocksDescendants"
+
+
+在button中加上
+android:focusable="false"
+android:clickable="true"

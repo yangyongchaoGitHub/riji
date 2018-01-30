@@ -1,0 +1,40 @@
+注意浏览器的缓存，缓存导致更新的js未生效
+前端引入js包
+<script src="/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script>
+$(function(){
+  $.ajax({
+	async: false,
+	type:"GET",
+	dataType: 'JSONP', <!--jsonp的方式传递数据 -->
+	jsonp: "callback", 
+	jsonpCallback: "success_jsonpCallback", <!--返回函数名称 -->
+    url: "http://www.wenyuntech.cn/qhwy/count/add", <!--请求路径 -->
+	success:function(json){       <!--返回正确的执行回调方法 当前已知json为服务器端定义的json字符串，可以认为返回的是success_jsonpCallback（[{count:"666"}]); 一个函数，jquery自动帮我们执行这个服务器端动态生成的函数 -->
+		document.getElementById("access_count").innerText = json[0].count; <!-- access_count是一个<span>标签 这里将标签的内容赋值 -->
+      $("access_count").html(json[0].count);
+		},
+	error:function(data) {   <!--请求返回错误时的回调方法 -->
+		alert('error');
+	}
+  });
+})
+</script>
+
+
+后端是spring框架的服务端
+@Controller
+@RequestMapping("/count")
+public class Loginctrl {
+
+	@ResponseBody
+	@RequestMapping(value="/add")
+	public String add() {
+		System.out.println("add " + this);
+		System.out.println(System.getProperty("user.dir"));
+		return "success_jsonpCallback" + "([{count:" + "\"" + update(new File(System.getProperty("user.dir") + "count.txt")) + "\"}]);";
+		// 返回值是一个字符串 类似  success_jsonpCallback（[{count:"666"}])；
+		// 的字符串
+	}
+}
+

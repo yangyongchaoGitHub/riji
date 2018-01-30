@@ -1,0 +1,6 @@
+1 在指定的activity的theme进行配置
+
+
+2 通过requestWindowFeature(featrueId)中的FEATURE_NO_TITLE
+在onCreate中
+requestWindowFeature(FEATURE_NO_TITLE);

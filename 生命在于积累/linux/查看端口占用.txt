@@ -1,0 +1,3 @@
+netstat -an
+netstat -an | grep 8080
+lsof -i:8080

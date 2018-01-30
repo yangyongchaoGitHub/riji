@@ -1,0 +1,6 @@
+Æô¶¯
+am start -n com.agivision.device.concentrator/com.agivision.concentrator.application.MainUI
+
+Í£Ö¹
+am force-stop com.agivision.device.concentrator
+export LD_LIBRARY_PATH=/vendor/lib:/system/lib

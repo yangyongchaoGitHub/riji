@@ -1,0 +1,22 @@
+严重: Servlet.service() for servlet [HTMLManager] in context with path [/manager] threw exception 
+java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (61021239) exceeds the configured maximum (52428800) 
+看到是发布的war包超过了tomcat设置的值，
+修改下最大文件大小，重启即可
+tomcat/webapps/manager/WEB-INF/web.xml
+找到
+ 
+  <multipart-config> 
+    <!-- 50MB max --> 
+    <max-file-size>52428800</max-file-size> 
+    <max-request-size>52428800</max-request-size> 
+    <file-size-threshold>0</file-size-threshold> 
+  </multipart-config> 
+</servlet> 
+<servlet> 
+修改为
+ 
+<!-- 100MB max --> 
+   <max-file-size>104758600</max-file-size> 
+   <max-request-size>104758600</max-request-size> 
+   <file-size-threshold>0</file-size-threshold> 
+ </multipart-config>

@@ -1,0 +1,13 @@
+.header on
+
+select * from sqlite_master where type="table";
+
+select * from sqlite_master where type="table" and name="testtable";
+
+
+
+因为SQLite不能完全支持SQL语句，只能增加字段，不能drop字段，所以，要修改某表的某字段数据类型，只能：
+ALTER TABLE TBAcct RENAME TO TBAcctOld;//先将表重命名 
+CREATE TABLE TBAcct(ID INTEGER PRIMARY KEY AUTOINCREMENT, Name VARCHAR(50)); //重新创建表
+INSERT INTO TBAcct (ID,Name) SELECT ID, CName FROM TBAcctOld; //将旧表的内容插入到新表中 
+DROP TABLE TBAcctOld; //删除旧表

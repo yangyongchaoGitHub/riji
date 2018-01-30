@@ -1,0 +1,7 @@
+***** minimum required is 25.0.0
+
+	
+2.3.0 is a new gradle plugin and it is supposed to work with buildToolsVersion 25 or higher. 
+If you change gradle plugin version to 2.2.3 you get possibility to work with old buildToolsVersion 23.0.3.
+
+in(https://stackoverflow.com/questions/41890659/errorthe-sdk-build-tools-revision-23-0-3-is-too-low-for-project-app-minim)

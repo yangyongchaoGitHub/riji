@@ -1,0 +1,25 @@
+1、下载文件
+语法：adb pull [文件名] /源路径/
+例如：
+adb pull blade_keypad.kl /system/usr/keylayout/
+adb pull /sdcard/mp3/1.mp3
+
+2、上传文件
+语法：adb push [文件名] /目标路径/
+例如：
+adb push qwerty.kl /system/usr/keylayout/
+adb push 1.mp3 /sdcard/mp3/
+
+3、安装程序
+语法：adb install -r [/路径/软件名.apk]
+例如：adb install -r com.android.vending.apk
+adb install -r com.android.vending.apk
+
+安装：adb install -r com.android.vending.apk
+
+4 安装apk的方法2
+pm install /data/dcc.apk
+
+
+
+echo -e "auto eth0\niface eth0 inet static\naddress 192.168.137.2\nnetmask 255.255.255.0\ngateway 192.168.137.1\ndns-nameservers 192.168.137.1" > /etc/network/interfaces

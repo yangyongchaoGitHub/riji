@@ -1,0 +1,20 @@
+在tomcat运行环境中设置： 
+window环境 使用startup启动 startup.bat第一行 
+SET CATALINA_OPTS= -Xms256m -Xmx512m -XX:MaxNewSize=256m -XX:MaxPermSize=256m
+
+使用tomcat\bin\Catalina.bat 文件
+在166行左右
+rem Execute Java with the applicable properties ”以下每行
+%_EXECJAVA% %JAVA_OPTS% %CATALINA_OPTS% %DEBUG_OPTS% -Djava.endorsed.dirs="%JAVA_ENDORSED_DIRS%" -classpath "%CLASSPATH%" -Dcatalina.base="%CATALINA_BASE%" -Dcatalina.home="%CATALINA_HOME%" -Djava.io.tmpdir="%CATALINA_TMPDIR%" %MAINCLASS% %CMD_LINE_ARGS% %ACTION%
+在 %DEBUG_OPTS% 后面添加-Xms256m -Xmx512m
+
+
+# Uncomment the following line to make the umask available when using the
+# org.apache.catalina.security.SecurityListener
+#JAVA_OPTS="$JAVA_OPTS -Dorg.apache.catalina.security.SecurityListener.UMASK=`umask`"
+export JAVA_OPTS="-server -Xms1024M -Xmx1024M -XX:MaxPermSize=128M
+-Djava.rmi.server.hostname=192.168.1.4
+-Dcom.sun.management.jmxremote
+-Dcom.sun.management.jmxremote.port=1090
+-Dcom.sun.management.jmxremote.ssl=false
+-Dcom.sun.management.jmxremote.authenticate=false"

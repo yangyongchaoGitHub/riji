@@ -1,0 +1,12 @@
+获取heap dump文件
+windows下切换到JDK_HOME/bin/，执行以下命令：jmap -dump:format=b,file=m.hprof 4**** 
+linux下切换到JDK_HOME/bin/，执行以下命令：./jmap -dump:format=b,file=m.hprof 462**
+这样就会在当前目录下生成m.hprof文件，这就是heap dump文件。
+
+
+???
+su tomcat7 -c 'jmap -dump:format=b,file=test.hprof 6018'
+
+需要注意的是在 /tmp/hsperfdata_$tomcat7/目录下是否有6628 的pid文件假如没有则这个tomcat7就要换成其他的usr
+和：/var/lib/tomcat7/webapps这个路径是tomcat7作为用户的目录
+wenyun@wenyun:/var/lib/tomcat7/webapps$ sudo -u tomcat7 jmap -dump:format=b,file=test.hprof 6628

@@ -1,0 +1,83 @@
+参考http://kafka.apache.org/quickstart#quickstart_download
+{ 遇到的bug，从单个broker到多个broker进行配置时，由于未知的原因，命令
+kafka-console-producer.bat --broker-list localhost:9092 --topic test
+运行之后没有任何反应，全部将服务停止，删除kafka的解压路径重新解压就可以了
+
+}
+
+1 zookeeper启动：
+>zookeeper-server-start.bat ../../config/zookeeper.properties
+(在linux下几乎一样的命令)
+
+2 启动kafka 新建一个CMD窗口
+>kafka-server-start.bat ../../config/server.properties
+
+3 创建一个topic 新建一个CMD窗口
+>kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+（在linux下方式相同）
+>kafka-topics.bat --list --zookeeper localhost:2181
+test
+
+4 运行生产者(topic:test) 新建一个CMD窗口
+>kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+5 运行一个消费者(topic:test) 新建一个CMD窗口 (client1)
+>kafka-console-consumer.bat --bootstrap-server localhost:9092 --from-beginning --topic test
+
+6 再运行一个消费者(topic:test) （client2）
+>kafka-console-consumer.bat --bootstrap-server localhost:9092 --from-beginning --topic test
+这时候client2在创建成功后会收到生产者之前发送过的消息（不确定）
+
+
+
+集群（在同一台机器）
+1 复制2个kafka的配置文件重新命名（config/server.properties）
+config/server-1.properties
+config/server-2.properties
+
+修改配置
+config/server-1.properties:
+    broker.id=1
+    listeners=PLAINTEXT://:9093
+    log.dir=/tmp/kafka-logs-1
+ 
+config/server-2.properties:
+    broker.id=2
+    listeners=PLAINTEXT://:9094
+    log.dir=/tmp/kafka-logs-2
+
+2 启动新的kafka-server （新建CMD）
+>kafka-server-start.bat ../../config/server-1.properties
+
+>kafka-server-start.bat ../../config/server-2.properties
+
+
+3 创建一个复制因子为3的新主题
+>kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 3 --partitions 1 --topic new-topic
+>kafka-topics.bat --list --zookeeper localhost:2181
+new-topic
+test
+
+
+4 查看broker的状态
+>kafka-topics.bat --describe --zookeeper localhost:2181 --topic new-topic
+Topic:new-topic   PartitionCount:1    ReplicationFactor:3 Configs:
+    Topic: new-topic  Partition: 0    Leader: 1   Replicas: 1,0,2 Isr: 1,0,2
+
+
+--Here is an explanation of output. The first line gives a summary of all the partitions, each additional line gives information about one partition. Since we have only one partition for this topic there is only one line.
+
+--"leader" is the node responsible for all reads and writes for the given partition. Each node will be the leader for a randomly selected portion of the partitions.
+--"replicas" is the list of nodes that replicate the log for this partition regardless of whether they are the leader or even if they are currently alive.
+--"isr" is the set of "in-sync" replicas. This is the subset of the replicas list that is currently alive and caught-up to the leader.
+
+
+此外 先前的另一个topic 
+>kafka-topics.bat --describe --zookeeper localhost:2181 --topic test
+Topic:test  PartitionCount:1    ReplicationFactor:1 Configs:
+    Topic: test Partition: 0    Leader: 0   Replicas: 0 Isr: 0
+
+
+5 运行生产者(topic:new-topic) 新建一个CMD窗口
+6 运行一个消费者(topic:new-topic) 新建一个CMD窗口 (client-new-topic1)
+7 运行一个消费者(topic:new-topic) 新建一个CMD窗口 (client-new-topic2)

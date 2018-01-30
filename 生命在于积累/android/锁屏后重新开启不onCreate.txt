@@ -1,0 +1,2 @@
+在配置文件AndroidManifest.xml的Activity标签里面添加配置
+android:configChanges="screenSize|keyboardHidden|orientation"（API13以后）

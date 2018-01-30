@@ -1,0 +1,7 @@
+将在android studio编译的a.apk放到
+wenyun@wenyun:~/a20/CQA20Android_v1.3/android4.2/out/target/product/wing-k8x4/system/app
+将会在第一次烧录后安装a.apk成为systemapp，若在a.apk中有lib库文件的应用，则需要将apk的.so提取出来，放到
+wenyun@wenyun:~/a20/CQA20Android_v1.3/android4.2/out/target/product/wing-k8x4/system/lib
+中去，再生成ROM。
+
+若a.apk已经被签名，则在更新a.apk时签名必须一致并且versionCode要大于当前安装的versionCode

@@ -1,0 +1,11 @@
+No private recovery resources for TARGET_DEVICE wing-k8x4
+target Java: bluetoothchattest (out/target/common/obj/APPS/bluetoothchattest_intermediates/classes)
+Copying: out/target/common/obj/APPS/bluetoothchattest_intermediates/classes-jarjar.jar
+Copying: out/target/common/obj/APPS/bluetoothchattest_intermediates/emma_out/lib/classes-jarjar.jar
+Copying: out/target/common/obj/APPS/bluetoothchattest_intermediates/classes.jar
+Copying: out/target/common/obj/APPS/bluetoothchattest_intermediates/noproguard.classes.jar
+target Dex: bluetoothchattest
+Copying: out/target/common/obj/APPS/bluetoothchattest_intermediates/noproguard.classes.dex
+target Package: bluetoothchattest (out/target/product/wing-k8x4/obj/APPS/bluetoothchattest_intermediates/package.apk)
+ 'out/target/common/obj/APPS/bluetoothchattest_intermediates/classes.dex' as 'classes.dex'...
+Install: out/target/product/wing-k8x4/system/app/bluetoothchattest.apk

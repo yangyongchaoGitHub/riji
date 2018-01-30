@@ -1,0 +1,4 @@
+source /etc/environment
+
+//我在etc/environment 修改了$JAVA_HOME
+//使用  source /etc/environment 再执行echo$JAVA_HOME 就会输出新配置

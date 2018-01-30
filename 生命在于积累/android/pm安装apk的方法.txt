@@ -1,0 +1,15 @@
+在a20中，当使用了su命令后，再执行pm会有Segmentation fault错误，不知道是什么原因，
+使用 exit 命令退出su账户后，pm命令就能正常使用了。
+pm install -r xxxxxx.apk
+-r：重新安装一个现有的应用程序，保留其数据。
+-t：允许安装测试.apks。
+-i：指定安装程序包名称。
+-s：在sdcard上安装软件包。
+-f：在内部闪存上安装软件包。
+-d：允许版本代码降级。
+
+
+卸载
+pm uninstall com.agi.test
+
+-k 在删除包之后保留数据和缓存目录。

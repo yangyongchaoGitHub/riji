@@ -1,0 +1,3 @@
+jni已配置好
+在android studio生成apk后解压，在lib中的armeabi-v7a中找到对应的lib*.so
+

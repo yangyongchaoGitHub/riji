@@ -1,0 +1,2 @@
+假设硬盘sda1在/dev/被发现
+mount /dev/sda1 /mnt/sda

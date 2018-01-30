@@ -1,0 +1,2 @@
+问题的根源：tomcat默认设置能接收HTTP POST请求的大小最大为2M,如果你的POST请求传递的数据大于2M,就会报错误。
+     解决的办法：修改tomcat的配置文件C:/MinyooCMS/tomcat/conf/server.xml(或者安装在D盘文件路径是D: /MinyooCMS/tomcat/conf/server.xml),找到里面的<Connector>标签,在该标签中添加"maxPostSize"属性,将该属性值设置成你想要的最大值,单位是字节,或者把这个值设置为 0(maxPostSize="0"),tomcat将不再检查POST的大小。即可解决上述问题。

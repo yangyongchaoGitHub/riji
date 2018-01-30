@@ -1,0 +1,39 @@
+查看sqlite3 某个表的结构：
+pragma table_info([table_name]);
+
+
+ListView.setOnItemClickListener 没有被调用，可能是焦点被子控件得到
+解决 在布局的根节点加上android:descendantFocusability="blocksDescendants
+
+
+ViewPage 当使用PagerAdapter时，界面的list是一个View，不好控制，
+er使用FragmentAdapter时，内存管理将不用我们操心。
+
+busybox ping 223.202.124.240 &  
+一直在后台进行ping
+
+linux下的nohup/setsid/&
+->201692601.txt
+
+安装第三方应用
+$ adb install apk文件名
+卸载第三方应用
+$ adb uninstall 包名
+调试时
+  pm install -r "/data/local/tmp/com.agivision.device.concentrator"
+
+一个使2个view同步的方法
+20161027.txt
+
+在activity的子线程调用
+Looper.prepare();
+Toast.makeText(Login.this, msg, Toast.LENGTH_SHORT).show();
+Looper.loop();
+之后再调用其他调用主线程的方法就失效了？
+
+在fragmentActivity中new Fragment时，他们共享view的信息，当一个相同id的view在两个fragment中被定义时，他总是响应在前一个被new出来fragment，而后一个fragment中为它而写的方法也会被前者服务。
+
+编译出的apk的配置说明
+
+在修改view时，调用invalidate（）会使主线程调用onDraw（），从而更新界面。
+

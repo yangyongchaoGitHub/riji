@@ -1,0 +1,2 @@
+查看安装的apk
+pm list packages

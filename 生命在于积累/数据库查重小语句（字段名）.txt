@@ -1,0 +1,1 @@
+SELECT heatmeter_id,count(*) FROM jbossdb.t_house group by heatmeter_id;

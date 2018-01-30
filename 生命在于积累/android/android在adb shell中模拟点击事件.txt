@@ -1,0 +1,4 @@
+
+input tap 300 220  这个就可以了
+
+点击返回键，相应指令： input keyevent 4.

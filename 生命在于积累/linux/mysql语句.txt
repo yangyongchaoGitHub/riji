@@ -1,0 +1,4 @@
+创建数据库
+mysql> create database dcc3
+linux导入.sql脚本执行 其中dcc.sql在/var/lib/tomcat7/webapps目录下
+root@lemaker:/var/lib/tomcat7/webapps# mysql -u root -p dcc3 < dcc.sql

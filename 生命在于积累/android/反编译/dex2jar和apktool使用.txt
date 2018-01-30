@@ -1,0 +1,299 @@
+2017/07/11 周二  09:51             1,004 2个网卡的配置.txt
+2017/08/26 周六  11:29    <DIR>          android
+2017/03/06 周一  13:39            10,240 android单元测试方法.doc
+2017/03/22 周三  15:36                77 android在adb shell中模拟点击事件.txt
+2017/01/10 周二  15:23            54,784 android悬浮可拖动view.doc
+2017/01/11 周三  18:09            90,112 android的gif显示.doc
+2017/03/06 周一  15:47         1,079,296 android自动化界面测试的方法.doc
+2017/04/19 周三  15:30           769,807 arprpjb_27875.rar
+2017/07/06 周四  21:25         6,974,566 BlueSuite_2_5 (3)csr烧录工具.zip
+2017/08/23 周三  17:42               649 eclipse上传下载项目.txt
+2017/08/18 周五  16:09                50 eclipse插件路径.txt
+2017/01/11 周三  17:25             7,654 GifMovieView.java
+2017/08/24 周四  10:32    <DIR>          Git
+2017/08/21 周一  10:56    <DIR>          linux
+2016/11/22 周二  20:55             2,028 MyFloatView.java
+2017/07/10 周一  16:42         6,996,688 SD_CardFormatter0500SetupEN_sd卡格式化
+工具.exe
+2017/07/18 周二  15:49    <DIR>          svn
+2017/04/26 周三  10:35           855,040 svn合并.doc
+2017/04/15 周六  17:10    <DIR>          UML基础：序列图图片资源
+2017/07/10 周一  16:53        12,567,188 win32diskimager-1.0.0-install_sd卡烧录
+工具.exe
+2017/08/21 周一  09:06                67 使用JConsole进行dumpheap获得hprof文件.t
+xt
+2017/07/20 周四  21:48            55,797 依赖于a20的c编译.txt
+2017/07/18 周二  15:18               425 修改tomcat上传文件大小.txt
+2017/07/18 周二  14:39               877 修改tomcat上传部署文件的最大值.txt
+2016/12/21 周三  14:24         3,405,118 分支或者这是拷贝.doc
+2017/07/14 周五  13:56         2,405,888 哎.doc
+2017/08/22 周二  11:24    <DIR>          性能与测试
+2016/11/21 周一  08:15           392,113 技术文档合集.pdf
+2017/05/27 周六  16:58                72 数据库查重小语句（字段名）.txt
+2017/07/21 周五  17:58            64,000 新建 Microsoft Word 97 - 2003 文档.doc
+2017/06/21 周三  15:45               512 查看sqlite的表头.txt
+2017/02/20 周一  11:44             1,083 笔记目录.txt
+2017/06/05 周一  21:28               444 解锁.txt
+2017/08/25 周五  11:02                21 路由跳数.txt
+2016/12/29 周四  20:32            16,896 选择控件按下颜色改变事件.doc
+2017/05/20 周六  14:09    <DIR>          通过dos获取android上的文件
+              31 个文件     35,762,873 字节
+               9 个目录 219,820,797,952 可用字节
+
+F:\杨勇朝\生命在于积累>cd android
+
+F:\杨勇朝\生命在于积累\android>dir
+ 驱动器 F 中的卷是 document
+ 卷的序列号是 000D-7257
+
+ F:\杨勇朝\生命在于积累\android 的目录
+
+2017/08/26 周六  11:29    <DIR>          .
+2017/08/26 周六  11:29    <DIR>          ..
+2017/07/26 周三  15:25               674 adb中的一些指令下载上传.txt
+2017/05/22 周一  16:58             1,853 android下载文件权限.txt
+2017/06/05 周一  22:00               144 android中ListView的item中使用button的问
+题.txt
+2017/07/20 周四  08:47               151 android取消title的方法.txt
+2016/12/31 周六  17:12         6,364,160 android的系统style.doc
+2017/06/21 周三  09:07               200 android获取天气的方法.txt
+2017/07/20 周四  08:51            28,672 出现等待动画的效果.doc
+2017/08/26 周六  11:31    <DIR>          反编译
+2017/03/23 周四  09:27             1,092 在DOS中连接android.txt
+2017/03/22 周三  16:19               505 无权限查看android目录.txt
+2017/08/15 周二  20:32               931 编译apk.txt
+              10 个文件      6,398,382 字节
+               3 个目录 219,820,797,952 可用字节
+
+F:\杨勇朝\生命在于积累\android>cd 反编译
+
+F:\杨勇朝\生命在于积累\android\反编译>dir
+ 驱动器 F 中的卷是 document
+ 卷的序列号是 000D-7257
+
+ F:\杨勇朝\生命在于积累\android\反编译 的目录
+
+2017/08/26 周六  11:31    <DIR>          .
+2017/08/26 周六  11:31    <DIR>          ..
+2017/08/26 周六  11:30    <DIR>          dex2jar-2.0
+2017/08/26 周六  11:25         2,362,460 dex2jar-2.0.zip
+2017/08/26 周六  11:30    <DIR>          jd-gui-windows-1.4.0
+2017/08/26 周六  11:29         7,928,105 jd-gui-windows-1.4.0.zip
+2017/08/26 周六  11:31    <DIR>          workspace
+2017/08/26 周六  10:38         7,989,342 yqcloud.apk
+               3 个文件     18,279,907 字节
+               5 个目录 219,820,797,952 可用字节
+
+F:\杨勇朝\生命在于积累\android\反编译>cd dex2jar-2.0
+
+F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0>dir
+ 驱动器 F 中的卷是 document
+ 卷的序列号是 000D-7257
+
+ F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0 的目录
+
+2017/08/26 周六  11:30    <DIR>          .
+2017/08/26 周六  11:30    <DIR>          ..
+2017/08/26 周六  11:32    <DIR>          dex2jar-2.0
+               0 个文件              0 字节
+               3 个目录 219,820,797,952 可用字节
+
+F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0>cd dex2jar-2.0
+
+F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0\dex2jar-2.0>dir
+ 驱动器 F 中的卷是 document
+ 卷的序列号是 000D-7257
+
+ F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0\dex2jar-2.0 的目录
+
+2017/08/26 周六  11:32    <DIR>          .
+2017/08/26 周六  11:32    <DIR>          ..
+2017/08/26 周六  11:31         5,379,276 classes.dex
+2014/10/27 周一  17:32               834 d2j-baksmali.bat
+2014/10/27 周一  17:32             1,086 d2j-baksmali.sh
+2014/10/27 周一  17:32               847 d2j-dex-recompute-checksum.bat
+2014/10/27 周一  17:32             1,099 d2j-dex-recompute-checksum.sh
+2014/10/27 周一  17:32               837 d2j-dex2jar.bat
+2014/10/27 周一  17:32             1,089 d2j-dex2jar.sh
+2014/10/27 周一  17:32               834 d2j-dex2smali.bat
+2014/10/27 周一  17:32             1,086 d2j-dex2smali.sh
+2014/10/27 周一  17:32               834 d2j-jar2dex.bat
+2014/10/27 周一  17:32             1,086 d2j-jar2dex.sh
+2014/10/27 周一  17:32               837 d2j-jar2jasmin.bat
+2014/10/27 周一  17:32             1,089 d2j-jar2jasmin.sh
+2014/10/27 周一  17:32               837 d2j-jasmin2jar.bat
+2014/10/27 周一  17:32             1,089 d2j-jasmin2jar.sh
+2014/10/27 周一  17:32               831 d2j-smali.bat
+2014/10/27 周一  17:32             1,083 d2j-smali.sh
+2014/10/27 周一  17:32               836 d2j-std-apk.bat
+2014/10/27 周一  17:32             1,088 d2j-std-apk.sh
+2014/10/27 周一  17:32               326 d2j_invoke.bat
+2014/10/27 周一  17:32             1,321 d2j_invoke.sh
+2014/10/27 周一  17:32    <DIR>          lib
+              21 个文件      5,398,245 字节
+               3 个目录 219,820,797,952 可用字节
+
+F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0\dex2jar-2.0>d2j-dex2jar.bat cl
+asses.dex
+dex2jar classes.dex -> .\classes-dex2jar.jar
+
+F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0\dex2jar-2.0>f:
+
+F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0\dex2jar-2.0>cd
+F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0\dex2jar-2.0
+
+F:\杨勇朝\生命在于积累\android\反编译\dex2jar-2.0\dex2jar-2.0>cd /
+
+F:\>dir
+ 驱动器 F 中的卷是 document
+ 卷的序列号是 000D-7257
+
+ F:\ 的目录
+
+2017/07/20 周四  19:53             7,806 1
+2017/08/08 周二  08:36    <DIR>          8G
+2017/05/23 周二  17:01             7,428 agi-hcms-apportion.jar
+2017/07/20 周四  19:17    <DIR>          bts
+2017/07/20 周四  19:22             2,679 bts.jar
+2017/08/22 周二  09:33       630,740,184 dcc.sql
+2017/08/21 周一  16:23               189 dccareab_url.txt
+2017/08/18 周五  10:50               279 dccareab_url2.txt
+2017/08/21 周一  16:24               281 dccareab_url_static_resourse.txt
+2017/07/20 周四  19:32             5,525 fannkuchredux.jar
+2017/08/26 周六  11:59    <DIR>          fff
+2017/08/22 周二  11:27    <DIR>          hprofs
+2015/07/27 周一  20:27           284,184 jquery-1.11.2.js
+2016/01/21 周四  10:50    <DIR>          Json
+2017/07/24 周一  17:52    <DIR>          jvmtop
+2017/07/24 周一  21:23    <DIR>          jvmtop-0.9.0-SNAPSHOT-jar-with-dependen
+cies
+2017/07/24 周一  21:21           118,068 jvmtop-0.9.0-SNAPSHOT-jar-with-dependen
+cies.jar
+2017/07/24 周一  19:40         6,813,408 jvmtop.jar
+2016/01/20 周三  10:13             3,255 models.jar
+2016/01/19 周二  15:06             1,117 models.xml
+2017/08/03 周四  15:19    <DIR>          ROOT
+2017/08/24 周四  18:04        39,001,135 ROOT.war
+2016/02/29 周一  10:36    <DIR>          share_file
+2016/01/11 周一  15:41    <DIR>          sqlite
+2016/01/27 周三  13:42    <DIR>          tmp
+2017/08/25 周五  17:08             4,245 udpserver.jar
+2016/02/26 周五  10:59    <DIR>          Unbuntu_file
+2016/02/26 周五  10:56    <DIR>          Virtual Machines
+2016/01/08 周五  20:12    <DIR>          workspace
+2016/10/14 周五  12:05    <DIR>          新建文件夹
+2016/10/14 周五  17:15           754,332 新建文件夹.rar
+2017/08/24 周四  11:41    <DIR>          杨勇朝
+2016/08/19 周五  18:21    <DIR>          迅雷下载
+              16 个文件    677,744,115 字节
+              17 个目录 219,754,147,840 可用字节
+
+F:\>cd fff
+
+F:\fff>dir
+ 驱动器 F 中的卷是 document
+ 卷的序列号是 000D-7257
+
+ F:\fff 的目录
+
+2017/08/26 周六  11:59    <DIR>          .
+2017/08/26 周六  11:59    <DIR>          ..
+2017/08/26 周六  11:56         7,254,673 apktool_2.2.4.jar
+2017/08/26 周六  11:59    <DIR>          dex2jar-2.0
+2017/08/26 周六  11:59    <DIR>          jd-gui-windows-1.4.0
+2017/08/26 周六  11:59    <DIR>          workspace
+               1 个文件      7,254,673 字节
+               5 个目录 219,754,147,840 可用字节
+
+F:\fff>apktool_2.2.4.jar
+
+F:\fff>apktool_2.2.4.jar -help
+
+F:\fff>
+F:\fff>
+F:\fff>apktool d f:\fff\yqcloud.apk f:\fff\workspace\resouress
+'apktool' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+F:\fff>java -jar apktool_2.2.4 d f:\fff\yqcloud.apk f:\fff\workspace\resouress
+Error: Unable to access jarfile apktool_2.2.4
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\fff\workspace\resoure
+ss
+Input file (f:\fff\workspace\resouress) was not found or was not readable.
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\fff\workspace\resoure
+ss\
+Input file (f:\fff\workspace\resouress\) was not found or was not readable.
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\fff\workspace\
+Input file (f:\fff\workspace\) was not found or was not readable.
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\fff\workspace
+Input file (f:\fff\workspace) was not found or was not readable.
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\fff
+Input file (f:\fff) was not found or was not readable.
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\fff\
+Input file (f:\fff\) was not found or was not readable.
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\fff
+Input file (f:\fff) was not found or was not readable.
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\
+Input file (f:\) was not found or was not readable.
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\fff
+
+F:\fff>
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\fff\
+F:\fff>java -jar apktool_2.2.4.jar
+Apktool v2.2.4 - a tool for reengineering Android apk files
+with smali v2.2.1 and baksmali v2.2.1
+Copyright 2014 Ryszard Wi?niewski <brut.alll@gmail.com>
+Updated by Connor Tumbleson <connor.tumbleson@gmail.com>
+
+usage: apktool
+ -advance,--advanced   prints advance information.
+ -version,--version    prints the version then exits
+usage: apktool if|install-framework [options] <framework.apk>
+ -p,--frame-path <dir>   Stores framework files into <dir>.
+ -t,--tag <tag>          Tag frameworks using <tag>.
+usage: apktool d[ecode] [options] <file_apk>
+ -f,--force              Force delete destination directory.
+ -o,--output <dir>       The name of folder that gets written. Default is apk.ou
+t
+ -p,--frame-path <dir>   Uses framework files located in <dir>.
+ -r,--no-res             Do not decode resources.
+ -s,--no-src             Do not decode sources.
+ -t,--frame-tag <tag>    Uses framework files tagged by <tag>.
+usage: apktool b[uild] [options] <app_path>
+ -f,--force-all          Skip changes detection and build all files.
+ -o,--output <dir>       The name of apk that gets written. Default is dist/name
+.apk
+ -p,--frame-path <dir>   Uses framework files located in <dir>.
+
+For additional info, see: http://ibotpeaches.github.io/Apktool/
+For smali/baksmali info, see: https://github.com/JesusFreke/smali
+
+F:\fff>java -jar apktool_2.2.4.jar d f:\fff\yqcloud.apk f:\
+Input file (f:\) was not found or was not readable.
+
+F:\fff>java -jar apktool_2.2.4.jar d -f f:\fff\yqcloud.apk -o f:\fff\workspace\r
+esouress
+I: Using Apktool 2.2.4 on yqcloud.apk
+I: Loading resource table...
+I: Decoding AndroidManifest.xml with resources...
+I: Loading resource table from file: C:\Users\Administrator\AppData\Local\apktoo
+l\framework\1.apk
+I: Regular manifest package...
+I: Decoding file-resources...
+I: Decoding values */* XMLs...
+I: Baksmaling classes.dex...
+I: Copying assets and libs...
+I: Copying unknown files...
+I: Copying original files...
+
+F:\fff>java -jar apktool_2.2.4.jar d -f f:\fff\yqcloud.apk -o f:\fff\workspace\r
+esouress
