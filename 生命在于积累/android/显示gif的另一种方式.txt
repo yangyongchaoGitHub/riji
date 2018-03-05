@@ -1,0 +1,7 @@
+引入开源
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+
+在要显示的地方
+
+	Glide.with(this).load(R.drawable.icon_eeeeee_200x22_gray)
+                .asGif().into(loginStatus_gif);

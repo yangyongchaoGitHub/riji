@@ -1,0 +1,19 @@
+创建一个自定义类继承自ViewPage，在其中的滚动重写中筛选指定的view控件类
+
+public class MyViewPage extends ViewPager {
+    public MyViewPage(Context context) {
+        super(context);
+    }
+
+    public MyViewPage(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    @Override
+    protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
+        if (v.getClass().getName().equals("com.baidu.mapapi.map.MapView")) {
+            return true;
+        }
+        return super.canScroll(v, checkV, dx, x, y);
+    }
+}
