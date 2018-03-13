@@ -1,0 +1,11 @@
+添加提交文件
+(.代表路径下全部文件 也可以指定文件添加)  
+git add .   
+
+查看状态
+git status  
+
+git commit -m "添加提交的小日志"
+
+提交了
+git push
