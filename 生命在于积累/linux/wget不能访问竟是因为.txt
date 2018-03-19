@@ -1,0 +1,13 @@
+wenyun@wenyun:/etc$ sudo wget "http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key"
+--2018-03-19 11:37:20--  http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
+Resolving repo.mosquitto.org (repo.mosquitto.org)... failed: Temporary failure in name resolution.
+wget: unable to resolve host address ‘repo.mosquitto.org’
+
+
+修改在etc下的resolv.conf
+
+添加配置
+wenyun@wenyun:/etc$ sudo vim resolv.conf
+nameserver 208.67.222.222
+nameserver 208.67.220.220
+就好了
