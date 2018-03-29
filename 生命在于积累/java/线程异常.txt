@@ -1,0 +1,17 @@
+while (running) {
+                Log.i(TAG, " collecThread " + this);
+                try {
+
+                    Thread.sleep(10000);
+                    MyApplication.getApplication().createDeviceMessage(new DeviceData());
+
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+在sleep这里发生了一个
+A/art﹕ art/runtime/thread_list.cc:173] Thread suspend timeout
+这样的异常，
+居然是因为其他线程的while没有进行休眠，导致cpu没有时间分配给这个线程
