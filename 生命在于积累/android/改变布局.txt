@@ -1,0 +1,6 @@
+RelativeLayout.LayoutParams ps = (RelativeLayout.LayoutParams) tv_status.getLayoutParams();
+                tv_status_margin_end = ps.getMarginEnd();
+                ps.setMarginEnd(0);
+                tv_status_key.setVisibility(View.INVISIBLE);
+
+                tv_status.setLayoutParams(ps);

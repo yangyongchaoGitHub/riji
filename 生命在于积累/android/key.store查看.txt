@@ -1,0 +1,5 @@
+生成： 通过android studio generate signed apk  
+创建一个新的keystory 
+
+E:\iot-s2-app\IoTa1\doc>keytool -list -v -keystore iots2app.jks
+输入密钥库口令:
