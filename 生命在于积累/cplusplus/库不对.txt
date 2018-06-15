@@ -1,0 +1,6 @@
+https://stackoverflow.com/questions/39334966/qt-requires-c11-support
+
+使用thread的库时的异常
+在.pro中加上
+
+CONFIG += c++11

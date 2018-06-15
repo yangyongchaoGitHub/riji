@@ -1,0 +1,43 @@
+在编译的linux源码宿主机中安装对应嵌入式系统的交叉编译工具链
+
+4.1.1 交叉编译工具链的安装
+因 ARM 体系架构与 X86 不同，故在宿主机编译的程序无法在 ARM 开发板运行，还需
+安装交叉编译工具链。用户请进入到上一节解压的路径下，并执行：
+cd platform/common/tools/crosstools/  （交叉工具链路径）
+sudo tar  -zxvf  arm-cortex_a9-eabi-4.7.tar.gz  -C /usr/local/   解压交叉工具
+链到/usr/local/目录
+gedit ~/.bashrc          打开用户变量文件，并在最后添加
+export PATH=$PATH:/usr/local/arm-cortex_a9-eabi-4.7-eglibc-2.18/bin
+重新打开终端或 source ~/.bashrc 使配置生效，验证交叉工具链是否成功安装：
+
+arm-cortex_a9-linux-gnueabi-gcc –v
+可见已成功安装交叉工具链
+
+完成后下载sqlite源码到宿主机中
+下载的是 sqlite-autoconf-3240000.tar.gz
+解压
+$tar xvfz sqlite-autoconf-3240000.tar.gz
+$cd sqlite-autoconf-3240000
+$./configure --prefix=/usr/local
+
+使用交叉编译工具编译代码
+arm-cortex_a9-linux-gnueabi-gcc sqlite3.c shell.c -o sqlite3 -lpthread –ldl
+编译完成后将目录下的sqlite3放入嵌入式系统中
+
+将sqlite3文件移动到/usr/bin目录下
+设置权限chmod 777 sqlite3
+
+root@realarm:/usr/bin# sqlite3
+SQLite version 3.24.0 2018-06-04 19:24:41
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> 
+sqlite> 
+sqlite> 
+sqlite> 
+sqlite> .exit
+
+就可以运行啦
+
+注意这里的arm-cortex_a9-linux-gnueabi-gcc 应该更换为对应平台的gcc交叉编译工具链的名称

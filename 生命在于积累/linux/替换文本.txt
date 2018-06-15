@@ -4,3 +4,8 @@ sudo sed -i "s/深圳前海问云/深圳市前海问云/g" *
 
 //特殊字符 不能替换
 sudo sed -i "s/粤ICP备17058488号/<a href="http://www.miitbeian.gov.cn">粤ICP备17058488号</a>/g" *
+
+
+替换文件名
+
+find -name *yyy.bak | xargs -i echo mv \"{}\" \"{}\" | sed 's/Android.mk.yyy.bak/Android.mk/2g' | sh

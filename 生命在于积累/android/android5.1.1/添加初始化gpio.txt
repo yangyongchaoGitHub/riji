@@ -1,0 +1,6 @@
+./system/core/rootdir/init.rc
+
+ÃÌº”¡À
+write /sys/class/gpio/export 65
+write /sys/class/gpio/gpio65/direction out
+write /sys/class/gpio/gpio65/value 0

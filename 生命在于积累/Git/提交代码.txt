@@ -2,7 +2,7 @@
 (.代表路径下全部文件 也可以指定文件添加)  
 git add .   
 
-查看状态
+查看状态 （提示一堆new file 表示添加了新文件）
 git status  
 
 git commit -m "添加提交的小日志"

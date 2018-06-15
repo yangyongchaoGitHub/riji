@@ -1,0 +1,17 @@
+ByteBuffer raw = ByteBuffer.allocate(2);
+                raw.put((byte) 0xff);
+                raw.put((byte) 0xaf);
+channel.send(new DatagramPacket(Unpooled.copiedBuffer(raw),
+                        defaultAdddress));
+
+
+使用这样的方法时 发送数据失败 
+
+
+修改
+channel.send(new DatagramPacket(Unpooled.copiedBuffer("zzzzz", CharsetUtil.UTF_8),
+                        defaultAdddress));
+
+发送成功
+
+应该是byteBuffer没有序列化
