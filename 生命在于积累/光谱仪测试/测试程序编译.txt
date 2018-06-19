@@ -1,0 +1,13 @@
+更换了合适的驱动文件后可以加载驱动；
+
+在源码中使用armlinux的.so库并且修改Makefile
+
+修改内容为
+
+CC = g++  《=====》  arm-cortex_a9-linux-gnueabi-g++
+
+进行make
+
+产生的ccdtest文件放到目标机器中；
+
+将.so文件放入到/usr/lib中（/usr）;
