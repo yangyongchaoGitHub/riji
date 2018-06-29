@@ -1,0 +1,16 @@
+环境
+笔记本通过wifi上网，网口用网线和开发板连接
+
+1 设置ubuntu的以太网连接，在ipv4中选择与其他计算机共享；
+
+2  将开发板重启
+
+3  配置开发板的ip （ ifconfig ···）
+
+4  开发板添加网关 （route add default gw ubuntu的ip）
+
+5  在开发板/etv/resolv.conf 中添加（nameserver   ubuntu的ip）（echo "nameserver ubuntu的ip" >> /dev/resolv.conf）
+
+就可以上网了
+
+

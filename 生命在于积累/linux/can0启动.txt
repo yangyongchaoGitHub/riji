@@ -1,0 +1,46 @@
+ifconfig -a出现错误
+root@realarm:/etc/network# ifconfig can0 up
+[ 5852.089000] mcp251x spi0.0: can0: bit-timing not yet defined
+[ 5852.095000] mcp251x spi0.0: unable to set initial baudrate!
+SIOCSIFFLAGS: Invalid argument
+root@realarm:/etc/network# 
+
+执行
+ip link set can0 type can bitrate 125000 triple-sampling on
+
+提示
+root@realarm:/dev# ifconfig can0 up
+[ 6345.430000] mcp251x spi0.0: CNF: 0x04 0xf5 0x01
+root@realarm:/dev# ifconfig
+can0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          UP RUNNING NOARP  MTU:16  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:10 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+eth0      Link encap:Ethernet  HWaddr 30:34:30:00:76:b6  
+          inet6 addr: fe80::3234:30ff:fe00:76b6/64 Scope:Link
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:4 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:580 (580.0 B)
+          Interrupt:48 
+
+eth1      Link encap:Ethernet  HWaddr 00:00:ff:ff:00:00  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:12 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:12 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:792 (792.0 B)  TX bytes:792 (792.0 B)
+
