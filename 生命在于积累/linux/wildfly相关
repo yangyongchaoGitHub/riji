@@ -1,0 +1,11 @@
+报错：java.net.UnknownHostException: 主机名: 主机名
+
+修改/etc/hosts文件
+
+127.0.0.1 主机名 localhost.localdomain localhost
+
+或是再添加一条 
+
+127.0.0.1 主机名 
+
+主机名是新加的，原来没有，保存，问题解决。
