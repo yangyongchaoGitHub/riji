@@ -1,0 +1,4 @@
+g++ test.cpp -L. -lmodule -o test -Wl,-rpath,.
+
+-L.  .可能表示查找so的路径
+-rpath,.  .也可能表示查找so的路径

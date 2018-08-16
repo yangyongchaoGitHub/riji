@@ -1,0 +1,1 @@
+hared -fpic -o libmodule.so sub_modules.cpp module_implement.cpp module_interface.cpp
