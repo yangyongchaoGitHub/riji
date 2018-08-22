@@ -1,0 +1,6 @@
+提交修改
+svn ci -m "添加管理员列表界面的列表delegate自定义控件实现" adminitemdelegate.cpp 
+
+从版本库检出项目
+
+svn check out path
