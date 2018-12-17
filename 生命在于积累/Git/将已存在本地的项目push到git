@@ -1,0 +1,228 @@
+在git创建同名存储库（sp/不同名也可以？）
+
+进入本地的项目根目录（/c/sp/）
+
+git init
+
+git add .
+
+git commit -m "first commit"
+
+git remote add https://github.com/yangyongchaoGitHub/spring4andwebsocket.git
+
+git push -u https://github.com/yangyongchaoGitHub/spring4andwebsocket.git master
+
+
+
+-----------------------------------关于登陆
+git config --global user.name "你的名称"   回车
+
+git config --global user.email "你的邮箱"    回车
+
+关于可能遇到的异常
+To https://github.com/yangyongchaoGitHub/spring4andwebsocket.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/yangyongchaoGitHub/spring4andwebsocket.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+/////解决
+git pull --rebase origin master
+原理不详
+
+完整操作记录
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5
+$ cd sp
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp
+$ touch README.md
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp
+$ git init
+Initialized empty Git repository in H:/eclipse-workspace/spring5/sp/.git/
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git add .
+warning: LF will be replaced by CRLF in src/main/java/com/yyy/controler/GogoCtrl.java.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/main/java/com/yyy/model/domain/User.java.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/main/java/com/yyy/service/UserService.java.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/main/resources/applicationContext.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/main/resources/springmvc-servlet.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in target/classes/applicationContext.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in target/classes/springmvc-servlet.xml.
+The file will have its original line endings in your working directory
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git@github.com:yangyongchaoGitHub/spring4andwebsocket.git
+bash: git@github.com:yangyongchaoGitHub/spring4andwebsocket.git: No such file or directory
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ ssh git@github.com:yangyongchaoGitHub/spring4andwebsocket.git
+ssh: Could not resolve hostname github.com:yangyongchaoGitHub/spring4andwebsocket.git: Name or service not known
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git commit -m "first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'HIAPAD@HIAPAD-2018H1T5.(none)')
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git config --global user.name "yangyongchaoGitHub"
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git config --global user.email "1123096216@qq.com"
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git commit -m "first commit"
+[master (root-commit) a7ac84d] first commit
+ 38 files changed, 700 insertions(+)
+ create mode 100644 .classpath
+ create mode 100644 .project
+ create mode 100644 .settings/.jsdtscope
+ create mode 100644 .settings/org.eclipse.core.resources.prefs
+ create mode 100644 .settings/org.eclipse.jdt.core.prefs
+ create mode 100644 .settings/org.eclipse.m2e.core.prefs
+ create mode 100644 .settings/org.eclipse.wst.common.component
+ create mode 100644 .settings/org.eclipse.wst.common.project.facet.core.xml
+ create mode 100644 .settings/org.eclipse.wst.jsdt.ui.superType.container
+ create mode 100644 .settings/org.eclipse.wst.jsdt.ui.superType.name
+ create mode 100644 .settings/org.eclipse.wst.validation.prefs
+ create mode 100644 README.md
+ create mode 100644 pom.xml
+ create mode 100644 src/main/java/com/yyy/controler/GogoCtrl.java
+ create mode 100644 src/main/java/com/yyy/model/domain/User.java
+ create mode 100644 src/main/java/com/yyy/service/UserService.java
+ create mode 100644 src/main/java/com/yyy/websocket/BinaryHandler.java
+ create mode 100644 src/main/java/com/yyy/websocket/MsgHandler.java
+ create mode 100644 src/main/java/com/yyy/websocket/TextHandler.java
+ create mode 100644 src/main/java/com/yyy/websocket/WebSocketConfig.java
+ create mode 100644 src/main/java/com/yyy/websocket/WebSocketHandlerInterceptor.java
+ create mode 100644 src/main/resources/applicationContext.xml
+ create mode 100644 src/main/resources/springmvc-servlet.xml
+ create mode 100644 src/main/webapp/WEB-INF/web.xml
+ create mode 100644 src/main/webapp/index.jsp
+ create mode 100644 target/classes/applicationContext.xml
+ create mode 100644 target/classes/com/yyy/controler/GogoCtrl.class
+ create mode 100644 target/classes/com/yyy/model/domain/User.class
+ create mode 100644 target/classes/com/yyy/service/UserService.class
+ create mode 100644 target/classes/com/yyy/websocket/BinaryHandler.class
+ create mode 100644 target/classes/com/yyy/websocket/MsgHandler.class
+ create mode 100644 target/classes/com/yyy/websocket/TextHandler.class
+ create mode 100644 target/classes/com/yyy/websocket/WebSocketConfig.class
+ create mode 100644 target/classes/com/yyy/websocket/WebSocketHandlerInterceptor.class
+ create mode 100644 target/classes/springmvc-servlet.xml
+ create mode 100644 target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+ create mode 100644 target/m2e-wtp/web-resources/META-INF/maven/com.htxs.yyy/sp/pom.properties
+ create mode 100644 target/m2e-wtp/web-resources/META-INF/maven/com.htxs.yyy/sp/pom.xml
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git remote add origin git@github.com:yangyongchaoGitHub/spring4andwebsocket.git
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git push -u git@github.com:yangyongchaoGitHub/spring4andwebsocket.git master
+The authenticity of host 'github.com (13.229.188.59)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,13.229.188.59' (RSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git push -u https://github.com/yangyongchaoGitHub/spring4andwebsocket.git master
+Username for 'https://github.com': yangyongchaoGitHub
+To https://github.com/yangyongchaoGitHub/spring4andwebsocket.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/yangyongchaoGitHub/spring4andwebsocket.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git remote add origin https://github.com/yangyongchaoGitHub/spring4andwebsocket.git
+fatal: remote origin already exists.
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git remote rm origin
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git remote add origin https://github.com/yangyongchaoGitHub/spring4andwebsocket.git
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git push -u https://github.com/yangyongchaoGitHub/spring4andwebsocket.git master
+Username for 'https://github.com': yangyongchaoGitHub
+To https://github.com/yangyongchaoGitHub/spring4andwebsocket.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/yangyongchaoGitHub/spring4andwebsocket.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git pull --rebase origin master
+warning: no common commits
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/yangyongchaoGitHub/spring4andwebsocket
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+First, rewinding head to replay your work on top of it...
+Applying: first commit
+
+HIAPAD@HIAPAD-2018H1T5 MINGW64 /h/eclipse-workspace/spring5/sp (master)
+$ git push -u https://github.com/yangyongchaoGitHub/spring4andwebsocket.git master
+Username for 'https://github.com': yangyongchaoGitHub
+Enumerating objects: 67, done.
+Counting objects: 100% (67/67), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (45/45), done.
+Writing objects: 100% (66/66), 13.28 KiB | 971.00 KiB/s, done.
+Total 66 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/yangyongchaoGitHub/spring4andwebsocket.git
+   7f9c16a..e636c9c  master -> master
+Branch 'master' set up to track remote branch 'master' from 'https://github.com/yangyongchaoGitHub/spring4andwebsocket.git'.
+
