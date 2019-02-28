@@ -1,0 +1,12 @@
+现在要加入一个条件B，实现这样一个效果：
+
+#ifndef A || ifdef B
+
+显然这样是不行的，后经人指点得出以下方法：
+
+#if (!defined A) || (defined B)
+
+...
+#endif
+
+同理可得出#ifdef A || ifdefB
