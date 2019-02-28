@@ -1,3 +1,521 @@
+QPixmap *img11 = new QPixmap("/home/zwy/humanFaceLock/humanFaceLock/picture/back.png");^M
+^M
+设置背景图片^M
+background:url(H:/qtProject/faceLockUI/img/main_background.png);^M
+border-image:url(H:/qtProject/faceLockUI/img/bkg_pswd_open.png);^M
+border-image:url(H:/yang/UI_Genesis/faceLockUI/img/white5.png);^M
+^M
+设置按钮按下和松开背景^M
+QPushButton{border-image:url(/frlock/images/bkg_pswd_open.png);}^M
+QPushButton:pressed{border-image:url(/frlock/images/bkg_pswd_open_down.png);}^M
+^M
+/home/sky/UI_Genesis/img/psw.png^M
+/dragonboard/picRes/face.png^M
+/dragonboard/picRes/face.png^M
+设置透明背景^M
+background:transparent;^M
+^M
+设置label文字位置^M
+setContentsMargins(2,2,2,2);^M
+^M
+删除QString最后面的字符^M
+str = str.left(str.length() - 1);^M
+str.chop(1);^M
+^M
+监听按钮的方法^M
+#include <QMouseEvent>^M
+^M
+.h中继承^M
+bool eventFilter(QObject *obj, QEvent *event);^M
+^M
+.cpp中重写^M
+bool Main::eventFilter(QObject *obj, QEvent *event) {^M
+    if(event->type() == QEvent::MouseButtonPress) {^M
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);^M
+        if(mouseEvent->button() == Qt::LeftButton){^M
+//            if(obj == this){^M
+//                qDebug() << "DlgFactorySet::eventFilter(" << endl;^M
+//                this->close();^M
+//                return true;^M
+//            }^M
+        }^M
+    }^M
+    return QWidget::eventFilter(obj, event);^M
+}^M
+^M
+界面重绘事件 设置背景，重绘界面^M
+#include <QPainter>^M
+^M
+.h^M
+void  paintEvent(QPaintEvent *event);^M
+^M
+.cpp^M
+^M
+void Infor::paintEvent(QPaintEvent *event) {^M
+    QPainter p(this);^M
+    p.setPen(Qt::NoPen);^M
+    p.setBrush(Qt::white);^M
+    p.drawRect(rect());^M
+}^M
+^M
+自定义QListWidgetItem^M
+在显示界面定义一个QListWidget  name是qlw^M
+显示界面.h定义^M
+void addItem(QString uName, QString uId);^M
+^M
+.cpp^M
+^M
+qlw->setItemDelegate(new AdminItemDelegate(qlw));^M
+^M
+void DlgAdminDel::addItem(QString name, QString id) {^M
+    QListWidgetItem *item = new QListWidgetItem();^M
+    item->setData(0, name);^M
+    item->setData(1, id);^M
+    pListWidget->addItem(item);^M
+}^M
+^M
+^M
+#ifndef ADMINITEMDELEGATE_H^M
+#define ADMINITEMDELEGATE_H^M
+#include <QObject>^M
+#include <QStyledItemDelegate>^M
+^M
+class AdminItemDelegate : public QStyledItemDelegate^M
+{^M
+    Q_OBJECT^M
+public:^M
+    explicit AdminItemDelegate(QWidget *parent);^M
+    void setIndex(int idx);^M
+private:^M
+    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;^M
+    virtual QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;^M
+    QPixmap icon;^M
+};^M
+^M
+#endif // ADMINITEMDELEGATE_H^M
+^M
+^M
+^M
+#include "adminitemdelegate.h"^M
+#include <QPainter>^M
+^M
+AdminItemDelegate::AdminItemDelegate(QWidget *parent)^M
+{^M
+    icon.load("/dragonboard/picRes/icon_face.png");^M
+}^M
+^M
+QSize AdminItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const {^M
+    QSize size=QStyledItemDelegate::sizeHint(option,index);^M
+    size.setHeight(92);^M
+    return size;^M
+}^M
+^M
+void AdminItemDelegate::paint(QPainter* painter,const QStyleOptionViewItem &option,const QModelIndex &index)const^M
+{^M
+    QRect rect=option.rect;^M
+    //rect.adjust(2,2,-2,-2); //缩小一圈点击后的背景^M
+    QString name=index.data(0).toString();  //得到item的数据 姓名^M
+    QString phone=index.data(1).toString(); //得到item的数据 电话号码^M
+    //bool gender=index.data(2).toBool();//得到item的数据 性别^M
+^M
+    QFont font("Microsoft YaHei", 24, 33);^M
+    //font.setFamily("Microsoft YaHei");^M
+    font.setPixelSize(24);^M
+    //font.setPointSize(33);^M
+    painter->setFont(font);^M
+    painter->setPen(QColor(0x33, 0x33, 0x33));^M
+^M
+    if(option.state&QStyle::State_Selected)^M
+    {^M
+        painter->setBrush(QColor(0xF4,0xF4,0xF4));^M
+        painter->drawRoundedRect(rect,2,2);     //给每个item的背景涂色^M
+        painter->setBrush(Qt::NoBrush);^M
+    }^M
+    if(1)  //显示姓名^M
+    {^M
+        QRect dst=rect;^M
+        dst.setLeft(rect.left()+30);^M
+//dst.setBottom(rect.top()+30);^M
+        //qDebug() << rect.left << " " << rect.top() << endl;^M
+        //printf("rect.left:%d  .top \r\n", rect.left(), rect.top());^M
+        painter->drawText(dst,Qt::AlignLeft|Qt::AlignVCenter,name);^M
+        //painter->drawText(dst,Qt::AlignLeft|Qt::AlignBottom,name);^M
+    }^M
+    if(1)  //显示电话号码^M
+    {^M
+        QRect dst = rect;^M
+        dst.setLeft(rect.left() + 180);^M
+        //dst.setTop(rect.top() + 20);^M
+        painter->drawText(dst, Qt::AlignLeft | Qt::AlignVCenter,phone);^M
+    }^M
+    if(1)  //显示图片^M
+    {^M
+        QRect dst=rect;^M
+        //dst.setRight(rect.left()+40);^M
+        dst.setLeft(dst.right() - 66);^M
+        QRect area(0,0,36,36);^M
+        area.moveCenter(dst.center());^M
+        //area.moveRight(dst.right());^M
+        painter->drawPixmap(area, icon);^M
+    }^M
+    painter->setPen(QColor(0xd7, 0xd7, 0xd7));^M
+    painter->drawLine(rect.left(), rect.bottom(), rect.right(), rect.bottom());^M
+}^M
+^M
+uint8  (unsigned char)转QString^M
+^M
+char *cc = (char*)admin->name;^M
+qDebug() << "AdminModify::addItem 1 " << cc << endl;^M
+QString value = QString::fromUtf8(cc);^M
+^M
+^M
+int 转QString^M
+QString::number(admin->id)^M
+^M
+tooltip会导致悬停出现提示框，默认是lanbe中的text展示出来^M
+^M
+清空QList^M
+1.使用qDeleteAll()^M
+^M
+    QList<T*> list；^M
+^M
+    qDeleteAll(list)；^M
+list = NULL;^M
+^M
+    QList<T*> *listp；^M
+^M
+    qDeleteAll(*list)；^M
+^M
+    listp->clear();^M
+^M
+    listp = NULL;^M
+^M
+ ^M
+^M
+2.通过遍历列表对列表一个一个的释放。^M
+^M
+在释放指针的同时把值清空，赋值为BULL 避免野指针。^M
+^M
+QList<T *> *qList = new QList<T *>  动态分配内存空间 不使用时需要释放^M
+^M
+T *t = new T;^M
+^M
+qList->append(t);^M
+^M
+           QList<t*>::iterator item = qList->begin();^M
+^M
+            while(item != qList->end())^M
+            {^M
+                qList->removeOne(*item);^M
+                T *index = (T*)*item;^M
+                delete index;^M
+                index = NULL;^M
+                item++;^M
+                qDebug()<< "dhsahdlhlas lish" << qList->length();^M
+            }^M
+            qList->clear();^M
+            qList = NULL;^M
+^M
+c++ 字符串转字符数组^M
+char buf[10];^M
+string str("ABCDEFG");^M
+strcpy(buf, str.c_str());//strncpy(buf, str.c_str(), 10);^M
+^M
+c++字符串查找^M
+#include <syslib.h>^M
+#include <string.h>^M
+main()^M
+{^M
+    char *s="GoldenGlobalView";^M
+    char *l="lob";^M
+    char *p;^M
+    clrscr();^M
+    p=strstr(s,l);^M
+    if(p)^M
+        printf("%s",p);^M
+    else^M
+        printf("NotFound!");^M
+    getchar();^M
+    return0;^M
+}^M
+^M
+^M
+////////////////////////////^M
+^M
+c++ select 超时^M
+ int select_ret;^M
+^M
+    struct timeval timeout = {3,0};^M
+^M
+    int maxfd = remote_sock_fd + 1;^M
+^M
+    fd_set sel_fds;^M
+^M
+^M
+^M
+    while(!process_exit){^M
+^M
+^M
+^M
+        //asynchronous^M
+^M
+        FD_ZERO(&sel_fds);^M
+^M
+        FD_SET(remote_sock_fd,&sel_fds);^M
+^M
+^M
+^M
+        printf("Starting select() \n"); // 打印select之前的断点^M
+^M
+        select_ret = select(maxfd,&sel_fds,NULL,NULL,&timeout);^M
+^M
+^M
+^M
+//////////////////////////////^M
+^M
+c++格式化输出到文件^M
+^M
+#include <stdio.h>^M
+#include <stdlib.h>^M
+^M
+int main()^M
+{^M
+   FILE * fp;^M
+^M
+   fp = fopen ("file.txt", "w+");^M
+   fprintf(fp, "%s %s %s %d", "We", "are", "in", 2014);^M
+   ^M
+   fclose(fp);^M
+   ^M
+   return(0);^M
+}^M
+ 运行输出^M
+We are in 2014^M
+^M
+//////////////////////////////////^M
+^M
+c++ 获取时间^M
+^M
+ #include <string>^M
+ #include <time.h>^M
+ using namespace std;^M
+ ^M
+ string getTime()^M
+ {^M
+     time_t timep;^M
+     time (&timep);^M
+     char tmp[64];^M
+     strftime(tmp, sizeof(tmp), "%Y-%m-%d %H:%M:%S",localtime(&timep) );^M
+     return tmp;^M
+ }^M
+ ^M
+ int main(){^M
+     string   time = getTime();^M
+     cout << time << endl;^M
+ ^M
+     return 0;^M
+ }^M
+^M
+///////////////////////////////^M
+^M
+c++分割字符串^M
+//借助strtok实现split^M
+#include <string.h>^M
+#include <stdio.h>^M
+ ^M
+int main()^M
+{^M
+    char s[] = "Golden Global   View,disk * desk";^M
+    const char *d = " ,*";^M
+    char *p;^M
+    p = strtok(s,d);^M
+    while(p)^M
+    {^M
+        printf("%s\n",p);^M
+        p=strtok(NULL,d);^M
+    }^M
+ ^M
+    return 0;^M
+}^M
+^M
+//////////////////////////////^M
+c++异常^M
+error: 'NULL' was not declared in this scope^M
+#include <stddef.h>^M
+或者^M
+#include <stdlib.h>^M
+或者^M
+#include <cstdlib>^M
+^M
+///////////////////////////////////^M
+^M
+C++ 将字符串值赋给CHAR数组^M
+^M
+CHAR name[50];^M
+^M
+strcpy(name, "tagname");^M
+^M
+////////////////////////////////^M
+^M
+qt编译异常^M
+configauthenticate.o: In function `ConfigAuthenticate::ConfigAuthenticate(QWidget*)':^M
+configauthenticate.cpp:(.text+0x50): undefined reference to `vtable for ConfigAuthenticate'^M
+collect2: ld returned 1 exit status^M
+^M
+将文件从qtcreator删除，然后再导入已存在的文件，或者qmake^M
+^M
+////////////////////////////////////^M
+^M
+合并字符串数组^M
+char a[10] = "abc";^M
+char b[10] = "def";^M
+strcat(a, b);^M
+a就变成“abcdef”了^M
+^M
+///////////////////////////////////^M
+^M
+int 转 字符数组^M
+int i=0;  ^M
+char itc[10];  ^M
+sprintf(itc,"%d$",i); ^M
+sprintf(itc,"%x",i); ^M
+^M
+////////////////////////////////////^M
+时间戳（1532434234234）转化为qDateTime^M
+^M
+QDateTime::fromTime_t(ttp.endData).toString("yyyy-MM-dd")^M
+QDateTime time = QDateTime::currentDateTime();   //获取当前时间^M
+int timeT = time.toTime_t();   //将当前时间转为时间戳^M
+^M
+^M
+^M
+^M
+//////////////////////////////////////^M
+^M
+unsigned char[] 转化为char[]^M
+^M
+unsigned char uc[20] = {0x33};^M
+char c[sizeof(uc)];^M
+memcpy(&c, &uc, sizeof(uc));^M
+^M
+^M
+^M
+^M
+^M
+^M
+////////////////////////////////////////^M
+QCoreApplication::processEvents();^M
+可以实现毫秒级的延时（非常规用法）^M
+^M
+////////////////////////////////////////////////^M
+^M
+模拟鼠标点击事件^M
+QPoint pos(403,34);^M
+    QMouseEvent event1(QEvent::MouseButtonRelease, pos, Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);^M
+    QApplication::sendEvent(lab_face, &event1);^M
+^M
+/////////////////////////////////////////////////^M
+获取label的字所占像素^M
+QFont wordfont;
+wordfont.setFamily("宋体");
+wordfont.setPointSize(10);
+QFontMetrics fm(wordfont);
+m_pLabel->setText("名称不合法");
+QRect rec = fm.boundingRect( m_pLabel->text());
+int ii = rec.width();//这个就获得了字符串所占的像素宽度^M
+^M
+/////////////////////////////////////////////////^M
+一次编译异常^M
+^M
+./include/jpeglib.h:774:3: error: ‘size_t’ does not name a type^M
+./include/jpeglib.h:786:3: error: ‘size_t’ does not name a type^M
+./include/jpeglib.h:817:3: error: ‘size_t’ has not been declared^M
+./include/jpeglib.h:819:3: error: ‘size_t’ has not been declared^M
+./include/jpeglib.h:964:34: error: ‘size_t’ has not been declared^M
+./include/jpeglib.h:966:36: error: ‘size_t’ has not been declared^M
+./include/jpeglib.h:974:30: error: ‘FILE’ has not been declared^M
+./include/jpeglib.h:975:29: error: ‘FILE’ has not been declared^M
+^M
+^M
+^M
+^M
+在.h中的引用是这样子的：^M
+  4 #include "jpeglib.h"^M
+  5 #include <stdio.h>^M
+  6 #include <ctime>^M
+  7 #include <sys/timeb.h>^M
+  8 #include <iostream>^M
+  9 #include <fstream>^M
+ 10 #include <cstring>^M
+ 11 #include <cstdlib>^M
+^M
+^M
+然后、、、、^M
+^M
+改成^M
+  4 #include <stdio.h>^M
+  5 #include "jpeglib.h"^M
+  6 #include <ctime>^M
+  7 #include <sys/timeb.h>^M
+  8 #include <iostream>^M
+  9 #include <fstream>^M
+ 10 #include <cstring>^M
+ 11 #include <cstdlib>^M
+就可以了^M
+^M
+^M
+////////////////////////////////^M
+圆角控件^M
+^M
+setStyleSheet ("border:2px groove gray;border-radius:10px;padding:2px 4px;");^M
+^M
+^M
+^M
+^M
+^M
+//////////////////////////////^M
+char[] 转sting^M
+char a[] == "vvvv";^M
+string str(a);^M
+^M
+^M
+^M
+//////////////////////////////////////^M
+string 转 char^M
+把string转换为char* 有  3种方法： ^M
+1.  调用  string   的   data   函数 ^M
+如： ^M
+string str="abc"; ^M
+char *p=str.data();^M
+^M
+^M
+string str="gdfd"; ^M
+    char *p=str.c_str(); ^M
+^M
+^M
+string str="hello"; ^M
+char p[40]; ^M
+str.copy(p,5,0); //这里5，代表复制几个字符，0代表复制的位置^M
+*(p+5)='/0';     //要手动加上结束符^M
+cout < <p;^M
+^M
+^M
+//////////////////////////////^M
+linux打印时间^M
+struct timeval tv;^M
+struct timezone tz;^M
+long time0, time1;^M
+^M
+gettimeofday (&tv , &tz);^M
+time0 = tv.tv_usec;^M
+··· ···^M
+gettimeofday (&tv , &tz);^M
+time1 = tv.tv_usec;^M
+printf(" encoder  -----------------time = %d", time1 - time0);^M
+
+
+
+////////////////////////////////////////////////
 现在要加入一个条件B，实现这样一个效果：
 
 #ifndef A || ifdef B
@@ -10,3 +528,5 @@
 #endif
 
 同理可得出#ifdef A || ifdefB
+
+
