@@ -8,7 +8,7 @@ git add .
 
 git commit -m "first commit"
 
-git remote add https://github.com/yangyongchaoGitHub/spring4andwebsocket.git
+git remote add origin https://github.com/yangyongchaoGitHub/spring4andwebsocket.git
 
 git push -u https://github.com/yangyongchaoGitHub/spring4andwebsocket.git master
 
