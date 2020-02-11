@@ -1,0 +1,11 @@
+git remote add gitee  你的gitee项目地址
+
+git remote add github  你的github项目地址
+
+
+更改代码完毕后 执行完成push之前的指令
+
+git push gitee master
+
+同时也
+git push github master
