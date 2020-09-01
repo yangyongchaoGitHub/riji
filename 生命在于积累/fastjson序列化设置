@@ -1,0 +1,33 @@
+jackson实体转json时 为NULL不参加序列化的汇总
+
+JsonInclude.Include.ALWAYS              默认
+
+JsonInclude.Include.NON_DEFAULT     属性为默认值不序列化
+
+JsonInclude.Include.NON_EMPTY         属性为 空（””） 或者为 NULL 都不序列化
+
+JsonInclude.Include.NON_NULL           属性为NULL   不序列化
+
+
+方法一、实体上使用 @JsonInclude(JsonInclude.Include.NON_NULL) // @JsonInclude(Include.NON_NULL)
+1、如果放在属性上，如果该属性为NULL则不参与序列化 ;
+2、如果放在类上，那对这个类的全部属性起作用 ;
+
+方法二、 如果不想每次都这样添加，可以在application.yml配置全局定义， 这种默认都生效(注意空格)
+spring:
+ 
+   jackson:
+ 
+        default-property-inclusion: non_null
+        
+
+方法三、通过ObjectMapper 对象进行设置，下面是测试用例
+mapper.setSerializationInclusion(JsonInclude.Include.ALWAYS);//默认
+mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL); //属性为NULL不序列化
+ObjectMapper 这样配置只对实体类起作用；对Map List不起作用如下仍会输出"data":NULL
+Map map = new HashMap();
+    map.put("result",0);
+    map.put("msg","成功");
+    map.put("data",null);
+    json = mapper.writeValueAsString(map);
+    System.out.println(json);
