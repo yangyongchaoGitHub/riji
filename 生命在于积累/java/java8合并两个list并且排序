@@ -1,0 +1,5 @@
+List<ExhiCorpMongoEntity> list = (List<ExhiCorpMongoEntity>) Stream.of(corpIdInExhiList, corpInAreaList)
+					.flatMap(Collection::stream)
+					.distinct()
+					.sorted(Comparator.comparing(ExhiCorpMongoEntity::getSorting))
+					.collect(Collectors.toList());
